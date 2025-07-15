@@ -3,6 +3,7 @@
 body {
   color: #ca5431;
   background: #f6e4c8;
+  line-height: 1.6;
 }
 
 header {
@@ -292,7 +293,9 @@ details p {
   max-width: 700px;
   width: 100%;
   background: #dd9348;
-  padding: 5px;
+  padding: 20px;
+  border: 3px solid #d3692e;
+  border-radius: 6%;
 }
 
 .form-row {
@@ -312,7 +315,8 @@ label {
   margin-bottom: 8px;
 }
 
-input, textarea {
+input,
+textarea {
   background: transparent;
   border: none;
   border-bottom: 2px solid #d3692e;
@@ -331,14 +335,23 @@ textarea {
   background: #d3692e;
   color: #fff;
   border: none;
-  border-radius: 25px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
+  display: block;
+  margin: 30px auto 0;
+  font-weight: bold;
 }
 
 .submit-btn:hover {
   background: #d3692e;
+}
+
+#footer {
+  background: #d3692e;
+  color: #f6e4c8;
+  padding: 5px;
 }
 
 /* ベースカラー：主に背景 */
