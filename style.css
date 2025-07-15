@@ -4,6 +4,7 @@ body {
   color: #ca5431;
   background: #f6e4c8;
   line-height: 1.6;
+
 }
 
 header {
@@ -259,6 +260,7 @@ details p {
   margin-bottom: 8px;
 }
 
+/* price */
 .price-btn {
   background-color: #d3692e;
   color: white;
@@ -278,7 +280,7 @@ details p {
 }
 .price-btn:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 2px #d3692e; /* 影も薄くしてへこむ感じ */
+  box-shadow: 0 1px 2px #d3692e;
 }
 
 /*contact*/
@@ -346,6 +348,7 @@ details p {
   margin-right: 12px;
 }
 
+/*footer*/
 #footer {
   background: #d3692e;
   color: #f6e4c8;
