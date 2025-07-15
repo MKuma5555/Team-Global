@@ -1,0 +1,63 @@
+/* Price table */
+#pricing-section {
+}
+
+.pricing-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.plan {
+    margin: 0 auto 60px;
+    background: #f6e4c8;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 20px #d3692e;
+    text-align: center;
+    position: relative;
+}
+
+.plan .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+    color: #ca5431;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.plan ul li {
+    margin-bottom: 8px;
+}
+
+
+.price-btn {
+  background-color: #d3692e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #ca5431;
+    transform: translateY(-1px); 
+    box-shadow: 0 4px 8px #d3692e;
+  }
+
+  &:active {
+    transform: translateY(2px); 
+    box-shadow: 0 1px 2px #d3692e; /* 影も薄くしてへこむ感じ */
+  }
+}
