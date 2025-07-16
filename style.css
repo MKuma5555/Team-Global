@@ -51,7 +51,8 @@ span {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .fv header .logo {
   font-size: 2em;
@@ -96,9 +97,9 @@ span {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 .fv .vid .story {
   position: absolute;
@@ -193,6 +194,7 @@ span {
   }
   header nav {
     margin-left: auto;
+    display: none;
   }
   header nav ul {
     display: none;
@@ -207,9 +209,9 @@ span {
   .fv .vid video {
     /* ここを変更 */
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
   .fv .vid .story div {
     height: 50vh;
@@ -218,6 +220,72 @@ span {
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 1;
+  }
+}
+.toggle_button {
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+.toggle_button .menu_icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.toggle_button .menu_icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #ca5431;
+}
+
+.dropdown_menu {
+  display: block;
+  position: absolute;
+  right: 2rem;
+  top: 5em;
+  width: 300px;
+  max-height: 0;
+  background-color: rgba(7, 7, 7, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open {
+  max-height: 500px; /* 必要に応じて内容に合わせて調整 */
+}
+.dropdown_menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.dropdown_menu ul li {
+  padding: 0.7rem;
+  display: flex;
+}
+.dropdown_menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.dropdown_menu ul li a:hover {
+  color: #ff7f50;
+}
+
+@media (max-width: 992px) {
+  .fv header nav {
+    display: none;
+  }
+  .fv header .toggle_button {
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .dropdown_menu {
+    right: 1rem;
+    top: 5em;
+    width: calc(100% - 2rem);
   }
 }
 /*アバター section*/
@@ -239,15 +307,15 @@ span {
 }
 .logo-row.row-1 {
   -webkit-animation: slideLeft 10s linear infinite;
-          animation: slideLeft 10s linear infinite;
+  animation: slideLeft 10s linear infinite;
 }
 .logo-row.row-2 {
   -webkit-animation: slideRight 10s linear infinite;
-          animation: slideRight 10s linear infinite;
+  animation: slideRight 10s linear infinite;
 }
 .logo-row.row-3 {
   -webkit-animation: slideLeft 10s linear infinite;
-          animation: slideLeft 10s linear infinite;
+  animation: slideLeft 10s linear infinite;
 }
 
 .logo-item {
@@ -268,7 +336,7 @@ span {
   width: 80px;
   height: 80px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 50%;
 }
 
@@ -479,7 +547,8 @@ label {
   margin-bottom: 8px;
 }
 
-input, textarea {
+input,
+textarea {
   background: transparent;
   border: none;
   border-bottom: 2px solid #d3692e;
