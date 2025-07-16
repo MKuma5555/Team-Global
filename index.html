@@ -1,213 +1,285 @@
 <!DOCTYPE html>
 <html lang="jp">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Global Web site</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- トップ画面 -->
     <div class="fv" id="mainVisual">
-        <header>
-            <div id="logo">
-                <h1 class="logo">
-                    <a href="">Team Global</a>
-                </h1>
-            </div>
-            <!-- Navボタン -->
-            <nav id="navbar">
-                <ul>
-                    <li><a href="#faeture">機能</a></li>
-                    <li><a href="#about">コミュニティの雰囲気</a></li>
-                    <li><a href="#chart">チャート診断</a></li>
-                    <li><a href="#voice">体験談</a></li>
-                    <li><a href="#showcase">アバターショーケース</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#price">料金プラン</a></li>
-                    <li><a href="#contact">問い合わせ</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="hero">
-            <h2>
-                <span>世界中どこにいても</span><br />
-                <span>仲間と学べる</span>
-            </h2>
-            <p>人との繋がり、それこそが継続する力です</p>
+      <header>
+        <div id="logo">
+          <h1 class="logo">
+            <a href="">Team Global</a>
+          </h1>
         </div>
+        <!-- Navボタン -->
+        <nav id="navbar">
+          <ul>
+            <li><a href="#faeture">機能</a></li>
+            <li><a href="#about">コミュニティの雰囲気</a></li>
+            <li><a href="#chart">チャート診断</a></li>
+            <li><a href="#voice">体験談</a></li>
+            <li><a href="#showcase">アバターショーケース</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#price">料金プラン</a></li>
+            <li><a href="#contact">問い合わせ</a></li>
+          </ul>
+        </nav>
+        <!-- responsive toggle button -->
+        <div class="toggle_button">
+          <div class="menu-icon"></div>
+        </div>
+        <!-- SP 用　DropDownメニュー -->
+        <div class="dropdown_menu open">
+          <ul>
+            <li><a href="#faeture">機能</a></li>
+            <li><a href="#about">コミュニティの雰囲気</a></li>
+            <li><a href="#chart">チャート診断</a></li>
+            <li><a href="#voice">体験談</a></li>
+            <li><a href="#showcase">アバターショーケース</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#price">料金プラン</a></li>
+            <li><a href="#contact">問い合わせ</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="vid">
+        <div class="holder">
+          <video
+            src="video/airplane.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+        <div class="story">
+          <div><h1>世界中どこにいても、繋がれる&hellip;</h1></div>
+          <div>
+            <h1>Meta Lifeを使って、あなたの「やりたい」をもっと身近に。</h1>
+          </div>
+          <div>
+            <h1>仲間と学び、挑戦し、成長する。</h1>
+          </div>
+          <div>
+            <h1>つながる新しいオンラインスクール体験。</h1>
+          </div>
+        </div>
+      </div>
     </div>
 
     <main>
-        <!-- できること -->
-        <section id="feature"></section>
+      <!-- できること -->
+      <section id="feature"></section>
 
-        <!-- コミュニティの雰囲気 -->
-        <section id="about"></section>
+      <!-- コミュニティの雰囲気 -->
+      <section id="about"></section>
 
-        <!-- あなたに合うチャート診断 -->
-        <section id="chart"></section>
-        <h1>あなたに合うの使い方診断</h1>
-        <p>Yes or No 答えるだけで、あなたにぴったりの使い方が見つかります。</p>
-        <!-- 体験談 -->
-        <section id="voice"></section>
+      <!-- あなたに合うチャート診断 -->
+      <section id="chart"></section>
+      <h1>あなたに合うの使い方診断</h1>
+      <p>Yes or No 答えるだけで、あなたにぴったりの使い方が見つかります。</p>
+      <!-- 体験談 -->
+      <section id="voice"></section>
 
-        <!-- アバターショーケース -->
-        <section id="showcase">
-            <div class="avatar-container">
-                <!-- 1列目 - 左に流れる -->
-                <div class="logo-row row-1">
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 1">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar2.png" alt="Logo 2">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar3.png" alt="Logo 3">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar4.png" alt="Logo 4">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar5.png" alt="Logo 5">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar6.png" alt="Logo 6">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar7.png" alt="Logo 7">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar8.png" alt="Logo 8">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar9.png" alt="Logo 9">
-                    </div>
-                    <!-- 重複して無限ループ効果を作る -->
-                    <div class="logo-item">
-                        <img src="img/avatar10.png" alt="Logo 1">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar11.png" alt="Logo 2">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar12.png" alt="Logo 3">
-                    </div>
-                </div>
-
-                <!-- 2列目 - 右に流れる -->
-                <div class="logo-row row-2">
-                    <div class="logo-item">
-                        <img src="img/avatar13.png" alt="Logo 10">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar14.png" alt="Logo 11">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar15.png" alt="Logo 12">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar16.png" alt="Logo 13">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar17.png" alt="Logo 14">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar18.png" alt="Logo 15">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar19.png" alt="Logo 16">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar2.png" alt="Logo 17">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 18">
-                    </div>
-                    <!-- 重複して無限ループ効果を作る -->
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 10">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 11">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 12">
-                    </div>
-                </div>
-
-                <!-- 3列目 - 左に流れる -->
-                <div class="logo-row row-3">
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 19">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 20">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 21">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 22">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 23">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 24">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 25">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 26">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 27">
-                    </div>
-                    <!-- 重複して無限ループ効果を作る -->
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 19">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 20">
-                    </div>
-                    <div class="logo-item">
-                        <img src="img/avatar1.png" alt="Logo 21">
-                    </div>
-                </div>
+      <!-- アバターショーケース -->
+      <section id="showcase">
+        <div class="avatar-container">
+          <!-- 1列目 - 左に流れる -->
+          <div class="logo-row row-1">
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 1" />
             </div>
-        </section>
+            <div class="logo-item">
+              <img src="img/avatars/avatar2.png" alt="Logo 2" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar3.png" alt="Logo 3" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar4.png" alt="Logo 4" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar5.png" alt="Logo 5" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar6.png" alt="Logo 6" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar7.png" alt="Logo 7" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar8.png" alt="Logo 8" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar9.png" alt="Logo 9" />
+            </div>
+            <!-- 重複して無限ループ効果を作る -->
+            <div class="logo-item">
+              <img src="img/avatars/avatar10.png" alt="Logo 1" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar11.png" alt="Logo 2" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar12.png" alt="Logo 3" />
+            </div>
+          </div>
 
-        <!-- FAQ -->
-        <section id="faq">
-            <h2 class="faq-title">よくある質問</h2>
-            <p class="faq-subtitle">入会前の疑問や不安を解決！</p>
+          <!-- 2列目 - 右に流れる -->
+          <div class="logo-row row-2">
+            <div class="logo-item">
+              <img src="img/avatars/avatar13.png" alt="Logo 10" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar14.png" alt="Logo 11" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar15.png" alt="Logo 12" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar16.png" alt="Logo 13" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar17.png" alt="Logo 14" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar18.png" alt="Logo 15" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar19.png" alt="Logo 16" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar2.png" alt="Logo 17" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 18" />
+            </div>
+            <!-- 重複して無限ループ効果を作る -->
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 10" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 11" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 12" />
+            </div>
+          </div>
 
-            <details>
-                <summary>Q META LIFEって何ですか？</summary>
-                <p>A メタバース空間の学習・交流プラットフォームです。</p>
-            </details>
-            <details>
-                <summary>Q 見学だけできますか？</summary>
-                <p>A はい、事前に予約すれば可能です。</p>
-            </details>
-            <details>
-                <summary>Q 海外からでも使えますか？</summary>
-                <p>A はい、もちろんです！　オンラインアクセス可能です。</p>
-            </details>
-            <details>
-                <summary>Q パソコン初心者でも大丈夫？</summary>
-                <p>A: サポートがありますのでご安心ください。</p>
-            </details>
-            <details>
-                <summary>Q 料金の支払い方法は？</summary>
-                <p>A クレジットカード、PayPayなど各種対応しています。</p>
-            </details>
+          <!-- 3列目 - 左に流れる -->
+          <div class="logo-row row-3">
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 19" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 20" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 21" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 22" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 23" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 24" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 25" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 26" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 27" />
+            </div>
+            <!-- 重複して無限ループ効果を作る -->
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 19" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 20" />
+            </div>
+            <div class="logo-item">
+              <img src="img/avatars/avatar1.png" alt="Logo 21" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h2 class="faq-title">よくある質問</h2>
+        <p class="faq-subtitle">入会前の疑問や不安を解決！</p>
+
+        <details>
+          <summary>Q META LIFEって何ですか？</summary>
+          <p>A メタバース空間の学習・交流プラットフォームです。</p>
+        </details>
+        <details>
+          <summary>Q 見学だけできますか？</summary>
+          <p>A はい、事前に予約すれば可能です。</p>
+        </details>
+        <details>
+          <summary>Q 海外からでも使えますか？</summary>
+          <p>A はい、もちろんです！　オンラインアクセス可能です。</p>
+        </details>
+        <details>
+          <summary>Q パソコン初心者でも大丈夫？</summary>
+          <p>A: サポートがありますのでご安心ください。</p>
+        </details>
+        <details>
+          <summary>Q 料金の支払い方法は？</summary>
+          <p>A クレジットカード、PayPayなど各種対応しています。</p>
+        </details>
+      </section>
+
+      <!-- 料金プラン -->
+      <section id="price">
+        <section class="pricing-section">
+          <h2 class="pricing-title">料金</h2>
+          <div class="plans">
+            <div class="plan popular">
+              <div class="price">
+                ¥500<span style="font-size: 14px"> / 月</span>
+              </div>
+              <ul>
+                <li>全機能利用可能</li>
+                <li>20時間アクセス</li>
+                <li>学習サポート</li>
+                <li>コミュニティ参加</li>
+              </ul>
+              <a href="#"><button class="price-btn">今すぐ始める</button></a>
+            </div>
+          </div>
         </section>
+      </section>
+
+      <!-- 問い合わせ -->
+      <section id="contact">
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name*</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name*</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
         <!-- 料金プラン -->
         <section id="price">
@@ -250,6 +322,6 @@
             <small>© 2025 made by team global. All rights reserved.</small>
         </footer>
     </main>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
