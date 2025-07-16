@@ -1,51 +1,167 @@
-header {
-  padding-inline: 40px;
-  padding-block: 20px;
-  background-color: azure;
-  display: flex;
-  align-items: center;
-  .logo {
-    font-size: 20px;
-    font-weight: 900;
-  }
-  nav {
-    margin-left: auto;
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 3em;
+@use "../base/common" as *;
 
-      li {
-        list-style: none;
-      }
+.fv {
+  position: relative;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-inline: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, background-color 0.3s ease,
+      box-shadow 0.3s ease;
+    .logo {
+      font-size: 2em;
+      font-weight: 900;
       a {
-        font-size: 13px;
-        font-weight: 300;
-        text-decoration: none;
+        color: $jasper;
+      }
+    }
+
+    nav {
+      margin-left: auto;
+      ul {
+        display: flex;
+        gap: 2em;
+
+        li {
+          list-style: none;
+
+          a {
+            font-size: 13px;
+            font-weight: 300;
+            cursor: pointer;
+            text-decoration: none;
+            color: $jasper;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .vid {
+    height: 400vh;
+    position: relative;
+    .holder {
+      position: sticky;
+      top: 0;
+      width: 100%; /* 幅は親要素に合わせる */
+      height: 100vh; /* 常に画面の高さに固定 */
+      overflow: hidden; /* はみ出た部分を隠す */
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .story {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+      div {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        h1 {
+          font-size: 3em;
+          font-weight: 900;
+          line-height: 1.5;
+        }
       }
     }
   }
 }
 
-.fv {
-  height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  background-color: cornflowerblue;
-}
-
-.hero {
-  color: white;
+// モーダルCSS
+.trial_modal_box {
+  position: fixed;
+  left: 2%;
+  bottom: 20px;
+  z-index: 99999999;
+  width: 220px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
   text-align: center;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  h2 {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.5;
+  svg {
+    // SVG (クローズボタン) のスタイル
+    float: right;
+    cursor: pointer;
+    margin: -0.5rem -0.5rem 0.5rem 0;
+  }
+
+  // 無料体験モーダルボックスのスタイル
+  &.trial_modal_box {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #333;
+    }
+
+    .text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .trial_btn {
+      padding: 0.5rem 1rem;
+      background-color: $butterscotch; // メインカラーを使用
+      color: white;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
   }
 }
+
+// Back to top button
+.back_to_top_btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  background-color: $champagne;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(rgba($jasper, 0.5), 0.5);
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: $cocoa-brown;
+      font-weight: bold;
+    }
+  }
+}
+// End of main visual styles
 
 // Responsive part
 
@@ -53,22 +169,36 @@ header {
   header {
     padding-inline: 20px;
     padding-block: 10px;
-    .logo {
-      font-size: 20px;
-      font-weight: 900;
-    }
+
     nav {
       margin-left: auto;
       ul {
-        gap: 1em;
+        display: none;
       }
     }
   }
-  .hero {
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 500;
-      line-height: 1.3;
+  .fv .vid {
+    height: 200vh;
+    .holder {
+      width: 100%;
+      height: 100vh;
+    }
+    video {
+      /* ここを変更 */
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .story {
+      div {
+        height: 50vh;
+
+        h1 {
+          font-size: 1.3rem;
+          font-weight: 500;
+          line-height: 1;
+        }
+      }
     }
   }
 }

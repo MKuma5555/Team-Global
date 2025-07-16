@@ -1,0 +1,62 @@
+$champagne: #f6e4c8;
+/* ベースカラー：主に背景 */
+$butterscotch: #dd9348;
+/* メインカラー：主たる装飾色 */
+$cocoa-brown: #d3692e;
+/* アクセントカラー：装飾色 */
+$jasper: #ca5431;
+/* アクセントカラー：主にテキストカラー */
+
+body {
+  line-height: 1.6;
+  color: $jasper;
+}
+
+main {
+  background-color: $champagne;
+}
+
+.wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px;
+  //   margin-inline:auto;
+  // padding-inline: 16px;
+}
+
+.inner-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+  //   margin-inline:auto;
+  // padding-inline: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Noto Sans JP",
+    // 和文
+    "Oswald",
+    // 英文
+    sans-serif; // 保険
+}
+
+p,
+a,
+span {
+  font-family: "Zen Kaku Gothic New",
+    // 和文フォント
+    "Oswald",
+    // 英文フォント
+    sans-serif; // 最後の保険
+}
+
+// _mixin.scss：書き出し(mixin)：レスポンシブ
+$sp: 768px;
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
+}
