@@ -46,6 +46,7 @@
       }
     }
   }
+
   .vid {
     height: 400vh;
     position: relative;
@@ -172,6 +173,7 @@
 
     nav {
       margin-left: auto;
+      display: none;
       ul {
         display: none;
       }
@@ -200,5 +202,80 @@
         }
       }
     }
+  }
+}
+
+// responsive toggle button
+.toggle_button {
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  .menu_icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $jasper;
+    }
+  }
+}
+
+// Dropdown menu styles
+.dropdown_menu {
+  display: block;
+  position: absolute;
+  right: 2rem;
+  top: 5em;
+  width: 300px;
+  max-height: 0;
+  background-color: rgba(7, 7, 7, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &.open {
+    max-height: 500px; /* 必要に応じて内容に合わせて調整 */
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      padding: 0.7rem;
+      display: flex;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+          color: #ff7f50; // $jasper 相当
+        }
+      }
+    }
+  }
+}
+
+// モバイルメニューのスタイル
+@media (max-width: 992px) {
+  .fv {
+    header {
+      nav {
+        display: none;
+      }
+      .toggle_button {
+        display: block;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .dropdown_menu {
+    right: 1rem; // スマホでは右端に寄せる
+    top: 5em; // トップ位置を調整
+    width: calc(100% - 2rem); // 幅を画面幅に合わせる
   }
 }

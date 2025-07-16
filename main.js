@@ -109,3 +109,38 @@ const handleHeaderScroll = () => {
 handleHeaderScroll();
 window.addEventListener("scroll", handleHeaderScroll);
 window.addEventListener("resize", handleHeaderScroll);
+
+// responsive menu
+const toggleButton = document.querySelector(".toggle_button");
+const dropdownMenu = document.querySelector(".dropdown_menu");
+const menuIcon = document.querySelector(".menu-icon");
+// icon svg change
+const hamburgerSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+  </svg>
+`;
+
+const closeSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+    <path d="M249-249l-57-57 231-231-231-231 57-57 231 231 231-231 57 57-231 231 231 231-57 57-231-231-231 231Z"/>
+  </svg>
+`;
+
+menuIcon.innerHTML = hamburgerSvg; // 初期表示
+// ハンバーガーメニューボタンでのドロップメニューのトグル
+toggleButton.addEventListener("click", () => {
+  dropdownMenu.classList.toggle("open");
+  console.log("Dropdown menu toggled");
+  const isOpen = dropdownMenu.classList.contains("open");
+  menuIcon.innerHTML = isOpen ? closeSvg : hamburgerSvg;
+});
+
+// 画面のサイズがレスポンシブより大きくなったときにドロップダウンメニューを閉じる
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 992) {
+    dropdownMenu.classList.remove("open");
+    isOpen = false;
+    menuIcon.innerHTML = hamburgerSvg;
+  }
+});
