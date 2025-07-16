@@ -51,8 +51,7 @@ span {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  transition: transform 0.3s ease, background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .fv header .logo {
   font-size: 2em;
@@ -97,9 +96,9 @@ span {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
 }
 .fv .vid .story {
   position: absolute;
@@ -209,9 +208,9 @@ span {
   .fv .vid video {
     /* ここを変更 */
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     -o-object-position: center;
-    object-position: center;
+       object-position: center;
   }
   .fv .vid .story div {
     height: 50vh;
@@ -248,7 +247,7 @@ span {
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
   -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -307,15 +306,15 @@ span {
 }
 .logo-row.row-1 {
   -webkit-animation: slideLeft 10s linear infinite;
-  animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 .logo-row.row-2 {
   -webkit-animation: slideRight 10s linear infinite;
-  animation: slideRight 10s linear infinite;
+          animation: slideRight 10s linear infinite;
 }
 .logo-row.row-3 {
   -webkit-animation: slideLeft 10s linear infinite;
-  animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 
 .logo-item {
@@ -336,7 +335,7 @@ span {
   width: 80px;
   height: 80px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   border-radius: 50%;
 }
 
@@ -515,65 +514,74 @@ details p {
   box-shadow: 0 1px 2px #d3692e; /* 影も薄くしてへこむ感じ */
 }
 
-/*contact form*/
-#contact {
-  padding: 60px 20px;
+/*contact*/
+.btn-wrapper {
   display: flex;
   justify-content: center;
-  margin: auto 0;
+  align-items: center;
+  margin: 60px 0;
 }
 
-.contact-form {
-  max-width: 700px;
-  width: 100%;
-  background: #dd9348;
-  padding: 5px;
-}
-
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-bottom: 30px;
-}
-
-label {
+.btn-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  width: 300px;
+  height: 70px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 8px;
+  border-radius: 40px;
+  text-decoration: none;
+  overflow: hidden;
+  background-color: #dd9348;
+  color: white;
+  border: 3px solid #dd9348;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.btn-switch .default,
+.btn-switch .hover {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+.btn-switch .default {
+  opacity: 1;
+}
+.btn-switch .hover {
+  opacity: 0;
+  color: white;
+}
+.btn-switch:hover {
+  background-color: #06C755;
+  border-color: #06C755;
+}
+.btn-switch:hover .default {
+  opacity: 0;
+}
+.btn-switch:hover .hover {
+  opacity: 1;
+}
+.btn-switch:active {
+  transform: scale(0.96);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-input,
-textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #d3692e;
-  padding: 8px;
-  font-size: 16px;
-  outline: none;
+.line-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
 }
 
-textarea {
-  resize: vertical;
-}
-
-.submit-btn {
-  margin-top: 30px;
-  padding: 14px 30px;
+#footer {
   background: #d3692e;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submit-btn:hover {
-  background: #d3692e;
+  color: #f6e4c8;
+  padding: 5px;
 }
 /*# sourceMappingURL=style.css.map */
