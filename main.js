@@ -114,6 +114,7 @@ window.addEventListener("resize", handleHeaderScroll);
 const toggleButton = document.querySelector(".toggle_button");
 const dropdownMenu = document.querySelector(".dropdown_menu");
 const menuIcon = document.querySelector(".menu-icon");
+const dropdownLinks = dropdownMenu.querySelectorAll("a");
 // icon svg change
 const hamburgerSvg = `
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
@@ -152,4 +153,13 @@ window.addEventListener("resize", () => {
     isOpen = false;
     menuIcon.innerHTML = hamburgerSvg;
   }
+});
+
+// ドロップダウンメニューのリンクをクリックしたときにメニューを閉じる
+dropdownLinks.forEach((itemLink) => {
+  itemLink.addEventListener("click", () => {
+    dropdownMenu.classList.remove("open");
+    isOpen = false;
+    menuIcon.innerHTML = hamburgerSVG;
+  });
 });
