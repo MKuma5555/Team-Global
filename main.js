@@ -128,6 +128,15 @@ const closeSvg = `
 `;
 
 menuIcon.innerHTML = hamburgerSvg; // 初期表示
+
+let isOpen = false;
+// リロード時にドロップメニューを初期値【閉じてる状態に】戻す
+document.addEventListener("DOMContentLoaded", () => {
+  dropdownMenu.classList.remove("open");
+  isOpen = false;
+  menuIcon.innerHTML = hamburgerSvg;
+});
+
 // ハンバーガーメニューボタンでのドロップメニューのトグル
 toggleButton.addEventListener("click", () => {
   dropdownMenu.classList.toggle("open");
