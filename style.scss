@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@use "page/common" as common;
+@use "base/common" as *;
 @use "page/_mixin.scss" as mx;
 @use "page/mainVisual" as fv;
 @use "page/avatar" as avatar;
@@ -7,16 +7,3 @@
 @use "page/price" as price;
 @use "page/contact" as contact;
 @use "page/footer" as footer;
-
-
-
-
-
-$champagne: #f6e4c8;
-/* ベースカラー：主に背景 */
-$butterscotch: #dd9348;
-/* メインカラー：主たる装飾色 */
-$cocoa-brown: #d3692e;
-/* アクセントカラー：装飾色 */
-$jasper: #ca5431;
-/* アクセントカラー：主にテキストカラー */
