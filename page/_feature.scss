@@ -1,0 +1,76 @@
+/*できること section*/
+@use "../base/common" as *;
+
+#feature {
+    text-align: center;
+    padding-bottom: 100px;
+
+    .section-title {
+        padding-block: 80px;
+        margin-block: 0;
+        position: relative;
+
+        &:before {
+            content:"";
+            width: 150px;
+            height: 4px;
+            background-color: $butterscotch;
+            position: absolute;
+            top: 75%;
+            left: 43%;
+
+        }
+    }
+
+    .sub-title {
+        padding-bottom: 50px;
+        margin-block: 0;
+    }
+
+
+    .wrapper {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+
+        li {
+            list-style: none;
+            background-color: $butterscotch;
+            border: 3px solid $champagne;
+            border-radius: 30px;
+            padding: 20px 20px;
+            box-shadow: 2px 4px 10px $jasper;
+            
+            img {
+                width: 80px;
+            }
+
+            .box-title {
+                margin-bottom: 30px;
+                color: $champagne;
+            }
+
+            p {
+                text-align: left;
+                margin-left: 30px;
+                position:relative;
+                color: $champagne;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left:-10%;
+                    top: 5px;
+                    width: 12px;
+                    height: 7px;
+                    transform: rotate(-45deg);
+                    border-bottom:3px solid $jasper;
+                    border-left:3px solid $jasper;
+
+
+                }
+            }
+        }
+    }
+
+}
