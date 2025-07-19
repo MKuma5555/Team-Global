@@ -51,7 +51,8 @@ span {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .fv header .logo {
   font-size: 2em;
@@ -98,9 +99,9 @@ span {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 .fv .vid .story {
   position: absolute;
@@ -210,9 +211,9 @@ span {
   .fv .vid video {
     /* ここを変更 */
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
   .fv .vid .story div {
     height: 50vh;
@@ -249,7 +250,7 @@ span {
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
   -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -483,7 +484,7 @@ span {
   width: 80px;
   height: 80px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 50%;
 }
 
@@ -690,8 +691,8 @@ details p {
   color: white;
 }
 .btn-switch:hover {
-  background-color: #06C755;
-  border-color: #06C755;
+  background-color: #06c755;
+  border-color: #06c755;
 }
 .btn-switch:hover .default {
   opacity: 0;
@@ -755,8 +756,8 @@ details p {
   color: white;
 }
 .btn-switch:hover {
-  background-color: #06C755;
-  border-color: #06C755;
+  background-color: #06c755;
+  border-color: #06c755;
 }
 .btn-switch:hover .default {
   opacity: 0;
@@ -779,4 +780,212 @@ details p {
   background: #d3692e;
   color: #f6e4c8;
   padding: 5px;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
+
+/* Chart */
+:root {
+  --main-color: #c41e67;
+  --dark-color: #a71555;
+  --step-color: #ced7e0;
+  --step-size: 32px;
+  --steps: 4;
+  --progress-width: calc((var(--steps) - 1) / var(--steps) * 100%);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 0.875rem;
+  transition: 0.3s;
+}
+buttonhover {
+  background-color: var(--dark-color);
+}
+
+button:active,
+button:hover {
+  background-color: var(--dark-color);
+}
+
+button:disabled {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline-color: #333;
+}
+
+button[type="submit"] {
+  background-color: #333;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:active {
+  background-color: #444;
+}
+
+form {
+  margin-block: auto;
+}
+
+/* form styles */
+.chart-demo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.chart-demo-container .form-wizard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: min(500px, 90%);
+  box-shadow: 0 4px 16px rgba(167, 21, 84, 0.1);
+}
+.chart-demo-container .form-wizard .progress-container {
+  position: relative;
+}
+.chart-demo-container .form-wizard .progress-container .progress {
+  height: 4px;
+  width: var(--progress-width);
+  background-color: var(--main-color);
+  position: absolute;
+  top: calc(var(--step-size) / 2);
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+}
+.chart-demo-container .form-wizard .progress-container .progress ol {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  counter-reset: step-number;
+  position: relative;
+  z-index: 3;
+}
+.chart-demo-container .form-wizard .progress-container .progress ol li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--step-color);
+  transition: 0.3s linear 0.3s;
+  text-align: center;
+  font-size: 0;
+}
+.chart-demo-container .form-wizard .progress-container:before {
+  content: "";
+  height: 4px;
+  width: var(--progress-width);
+  background-color: var(--step-color);
+  position: absolute;
+  top: calc(var(--step-size) / 2);
+  left: 50%;
+  translate: -50% -50%;
+}
+.chart-demo-container .form-wizard .progress-container ol {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  counter-reset: step-number;
+  position: relative;
+  z-index: 3;
+}
+.chart-demo-container .form-wizard .progress-container ol li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--step-color);
+  transition: 0.3s linear 0.3s;
+  text-align: center;
+  font-size: 0;
+}
+
+/* if page is rtl adjust the transform origin */
+html[dir="rtl"] .progress-container .progress {
+  transform-origin: right;
+}
+
+.progress-container li::before {
+  counter-increment: step-number;
+  content: counter(step-number);
+  background-color: var(--step-color);
+  width: var(--step-size);
+  height: var(--step-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s linear 0.3s;
+  font-size: 1rem;
+}
+
+@media (min-width: 480px) {
+  .progress-container li {
+    font-size: 1rem;
+    gap: 8px;
+  }
+}
+.progress-container li:where(.done, .current) {
+  color: #333;
+  font-weight: 500;
+}
+
+.progress-container li.done::before {
+  background-color: var(--main-color);
+}
+
+.progress-container li.current::before {
+  background-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(167, 21, 84, 0.25);
+}
+
+.step.current {
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding-inline: 8px;
+}
+
+.controls button {
+  flex: 1;
+}
+
+.completed {
+  text-align: center;
+}
+
+.completed h3 {
+  margin-bottom: 8px;
+}
+
+.completed svg {
+  width: 100px;
+  height: 100px;
+  stroke: yellowgreen;
+}
+
+.completed:not([hidden]) ~ * {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
