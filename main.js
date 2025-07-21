@@ -163,3 +163,69 @@ dropdownLinks.forEach((itemLink) => {
     menuIcon.innerHTML = hamburgerSVG;
   });
 });
+
+
+
+
+// スライドする動き
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#feed-slider', {
+    type: 'loop',
+    autoScroll: {
+      speed: 1.2,               // スクロール速度（数値を大きくすると速くなる）
+      pauseOnHover: true,       // ★ ホバーで一時停止する
+      pauseOnFocus: false       // フォーカスされても止めない
+    },
+    arrows: false,              // 矢印不要なら false
+    pagination: false,          // ドットナビゲーション不要なら false
+    gap: '20px',                // スライド間の余白
+    perPage: 3,                 // 一度に表示する枚数
+    breakpoints: {
+      1024: { perPage: 2 },
+      768: { perPage: 1 }
+    }
+  }).mount(window.splide.Extensions);
+});
+
+// マウスで掴む動き
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector('.splide__list');
+  const wrappers = document.querySelectorAll('.feed-box-wrapper');
+
+  let startX = 0;
+
+  slider.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    slider.classList.add('is-grabbing');
+
+    wrappers.forEach(wrapper => {
+      wrapper.classList.remove('is-active-left', 'is-active-right');
+    });
+
+    const handleMouseMove = (e) => {
+      const diffX = e.clientX - startX;
+
+      wrappers.forEach(wrapper => {
+        wrapper.classList.remove('is-active-left', 'is-active-right');
+        if (diffX < -5) {
+          wrapper.classList.add('is-active-left'); // 左へドラッグ
+        } else if (diffX > 5) {
+          wrapper.classList.add('is-active-right'); // 右へドラッグ
+        }
+      });
+    };
+
+    const handleMouseUp = () => {
+      slider.classList.remove('is-grabbing');
+      wrappers.forEach(wrapper => {
+        wrapper.classList.remove('is-active-left', 'is-active-right');
+      });
+
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  });
+});

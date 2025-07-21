@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Global Web site</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Splide.js用css読み込み -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css" />
+
 </head>
 
 <body>
@@ -78,7 +81,7 @@
 
             <ul class="wrapper">
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
+                    <img src="img/icons/communication.png" class=icon alt="">
                     <h3 class="box-title">リアルタイムコミュニケーション</h3>
                     <p>チャット機能</p>
                     <p>画面共有</p>
@@ -86,15 +89,15 @@
                     <p>挙手・スタンプ機能</p>
                 </li>
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
-                    <h3 class="box-title">アバターカスタマイズ</h3>
-                    <p>服装のカスタマイズ</p>
-                    <p>ダンス機能</p>
-                    <p>車での移動</p>
-                    <p>表情・ジェスチャー</p>
+                    <img src="img/icons/avatar custom.png" class=icon alt="">
+                    <h3 class="box-title-reverse">アバターカスタマイズ</h3>
+                    <p class="text-reverse">服装のカスタマイズ</p>
+                    <p class="text-reverse">ダンス機能</p>
+                    <p class="text-reverse">車での移動</p>
+                    <p class="text-reverse">表情・ジェスチャー</p>
                 </li>
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
+                    <img src="img/icons/room.png" class=icon alt="">
                     <h3 class="box-title">多様な部屋・空間</h3>
                     <p>会議室（Lock可能）</p>
                     <p>学習フェーズ別部屋</p>
@@ -102,15 +105,15 @@
                     <p>離席機能</p>
                 </li>
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
-                    <h3 class="box-title">学習サポート</h3>
-                    <p>毎週月曜勉強会</p>
-                    <p>初心者質問会</p>
-                    <p>案件獲得者の体験談</p>
-                    <p>講師の経験シェア</p>
+                    <img src="img/icons/teaching.png" class=icon alt="">
+                    <h3 class="box-title-reverse">学習サポート</h3>
+                    <p class="text-reverse">毎週月曜勉強会</p>
+                    <p class="text-reverse">初心者質問会</p>
+                    <p class="text-reverse">案件獲得者の体験談</p>
+                    <p class="text-reverse">講師の経験シェア</p>
                 </li>
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
+                    <img src="img/icons/clock.png" class=icon alt="">
                     <h3 class="box-title">24時間活動</h3>
                     <p>早朝からの朝活（5:00-）</p>
                     <p>深夜まで対応（-1:00）</p>
@@ -118,12 +121,12 @@
                     <p>いつでも質問可能</p>
                 </li>
                 <li>
-                    <img src="img/avatars/avatar20.png" class=icon alt="">
-                    <h3 class="box-title">案件・キャリア支援</h3>
-                    <p>案件紹介・回し合い</p>
-                    <p>ハッカソン開催</p>
-                    <p>ポートフォリオ相談</p>
-                    <p>フリーランス支援</p>
+                    <img src="img/icons/sharing.png" class=icon alt="">
+                    <h3 class="box-title-reverse">案件・キャリア支援</h3>
+                    <p class="text-reverse">案件紹介・回し合い</p>
+                    <p class="text-reverse">ハッカソン開催</p>
+                    <p class="text-reverse">ポートフォリオ相談</p>
+                    <p class="text-reverse">フリーランス支援</p>
                 </li>
             </ul>
         </section>
@@ -132,6 +135,120 @@
         <section id="about">
             <h2 class="section-title">コミュニティの雰囲気</h2>
             <p class="sub-title">世界中の仲間と一緒に学べる環境。写真で雰囲気を感じてください。</p>
+
+            <div id="feed-slider" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- 1 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/mokumoku-room.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/coffee.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">朝活セッション</p>
+                                            <p class="box-text">25分集中×5分休憩のリズムで、朝からやる気スイッチON!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 2 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/seminar.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/beer.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">オンライン飲み会</p>
+                                            <p class="box-text">週末に開催される交流会では、全国・全世界の仲間と気軽につながれます。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 3 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/gathering.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/hackathon.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">ハッカソン</p>
+                                            <p class="box-text">3人1組力を合わせて、チーム開発に挑戦する大会でさらにスキルアップ!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 4 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/question-room.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/question.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">質問会</p>
+                                            <p class="box-text">初心者の方も安心。分からないことを気軽に聞ける時間を設けています</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 5 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/screen-sharing.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/pcs.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">画面共有学習</p>
+                                            <p class="box-text">画面を見せ合いながら学ぶことで、理解しやすく一緒に進めやすい環境です</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 6 -->
+                        <li class="splide__slide">
+                            <div class="feed-box-wrapper">
+                                <div class="feed-layer feed-layer-1"></div>
+                                <div class="feed-layer feed-layer-2"></div>
+                                <div class="feed-box">
+                                    <img src="img/projects.png" class="feed-image" alt="">
+                                    <div class="feed-lower">
+                                        <img src="img/icons/shaking hands.png" class="icon" alt="">
+                                        <div class="feed-text">
+                                            <p class="box-title">案件紹介</p>
+                                            <p class="box-text">信頼できる仲間と案件を紹介し合い、仕事のきっかけを広げます</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- あなたに合うチャート診断 -->
@@ -141,8 +258,8 @@
         <!-- 体験談 -->
         <section id="voice">
             <h2 class="section-title">実際に使っている人の声</h2>
-            <p class="sub-title">世界中のメンバーから寄せられた実体験をご紹介します。</p> 
-            
+            <p class="sub-title">世界中のメンバーから寄せられた実体験をご紹介します。</p>
+
             <ul class="wrapper">
                 <li>
                     <div class="upper">
@@ -444,6 +561,12 @@
 
         <!-- SP 用ボタン -->
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Splide.js用js読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+    <!-- AutoScroll拡張 -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.4.1/dist/js/splide-extension-auto-scroll.min.js"></script>
     <script src="main.js"></script>
 </body>
 
