@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Global Web site</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <!-- Splide.js用css読み込み -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css" />
+
+</head>
 
   <body>
     <div id="cursor-layer">
@@ -91,130 +94,244 @@
 
         <ul class="wrapper">
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">リアルタイムコミュニケーション</h3>
-            <p>チャット機能</p>
-            <p>画面共有</p>
-            <p>音声通話</p>
-            <p>挙手・スタンプ機能</p>
+              <img src="img/icons/communication.png" class=icon alt="">
+              <h3 class="box-title">リアルタイムコミュニケーション</h3>
+              <p>チャット機能</p>
+              <p>画面共有</p>
+              <p>音声通話</p>
+              <p>挙手・スタンプ機能</p>
           </li>
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">アバターカスタマイズ</h3>
-            <p>服装のカスタマイズ</p>
-            <p>ダンス機能</p>
-            <p>車での移動</p>
-            <p>表情・ジェスチャー</p>
+              <img src="img/icons/avatar custom.png" class=icon alt="">
+              <h3 class="box-title-reverse">アバターカスタマイズ</h3>
+              <p class="text-reverse">服装のカスタマイズ</p>
+              <p class="text-reverse">ダンス機能</p>
+              <p class="text-reverse">車での移動</p>
+              <p class="text-reverse">表情・ジェスチャー</p>
           </li>
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">多様な部屋・空間</h3>
-            <p>会議室（Lock可能）</p>
-            <p>学習フェーズ別部屋</p>
-            <p>カフェ・交流スペース</p>
-            <p>離席機能</p>
+              <img src="img/icons/room.png" class=icon alt="">
+              <h3 class="box-title">多様な部屋・空間</h3>
+              <p>会議室（Lock可能）</p>
+              <p>学習フェーズ別部屋</p>
+              <p>カフェ・交流スペース</p>
+              <p>離席機能</p>
           </li>
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">学習サポート</h3>
-            <p>毎週月曜勉強会</p>
-            <p>初心者質問会</p>
-            <p>案件獲得者の体験談</p>
-            <p>講師の経験シェア</p>
+              <img src="img/icons/teaching.png" class=icon alt="">
+              <h3 class="box-title-reverse">学習サポート</h3>
+              <p class="text-reverse">毎週月曜勉強会</p>
+              <p class="text-reverse">初心者質問会</p>
+              <p class="text-reverse">案件獲得者の体験談</p>
+              <p class="text-reverse">講師の経験シェア</p>
           </li>
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">24時間活動</h3>
-            <p>早朝からの朝活（5:00-）</p>
-            <p>深夜まで対応（-1:00）</p>
-            <p>世界各地の時差対応</p>
-            <p>いつでも質問可能</p>
+              <img src="img/icons/clock.png" class=icon alt="">
+              <h3 class="box-title">24時間活動</h3>
+              <p>早朝からの朝活（5:00-）</p>
+              <p>深夜まで対応（-1:00）</p>
+              <p>世界各地の時差対応</p>
+              <p>いつでも質問可能</p>
           </li>
           <li>
-            <img src="img/avatars/avatar20.png" class="icon" alt="" />
-            <h3 class="box-title">案件・キャリア支援</h3>
-            <p>案件紹介・回し合い</p>
-            <p>ハッカソン開催</p>
-            <p>ポートフォリオ相談</p>
-            <p>フリーランス支援</p>
+              <img src="img/icons/sharing.png" class=icon alt="">
+              <h3 class="box-title-reverse">案件・キャリア支援</h3>
+              <p class="text-reverse">案件紹介・回し合い</p>
+              <p class="text-reverse">ハッカソン開催</p>
+              <p class="text-reverse">ポートフォリオ相談</p>
+              <p class="text-reverse">フリーランス支援</p>
           </li>
-        </ul>
+      </ul>
       </section>
 
       <!-- コミュニティの雰囲気 -->
       <section id="about">
-        <h2 class="section-title">コミュニティの雰囲気</h2>
-        <p class="sub-title">
-          世界中の仲間と一緒に学べる環境。写真で雰囲気を感じてください。
-        </p>
-      </section>
+          <h2 class="section-title">コミュニティの雰囲気</h2>
+          <p class="sub-title">世界中の仲間と一緒に学べる環境。写真で雰囲気を感じてください。</p>
 
-      <!-- あなたに合うチャート診断 -->
-      <section id="chart">
-        <div class="chart-container">
-          <div class="chart-title">
-            <h1>チャート診断</h1>
-            <p>あなたにぴったりの使い方を提案します。</p>
-          </div>
+          <div id="feed-slider" class="splide">
+              <div class="splide__track">
+                  <ul class="splide__list">
+                      <!-- 1 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/mokumoku-room.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/coffee.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">朝活セッション</p>
+                                          <p class="box-text">25分集中×5分休憩のリズムで、朝からやる気スイッチON!</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
 
-          <div class="chart-wizard">
-            <!-- .completed -->
-            <div class="completed result-card" hidden>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                />
-              </svg>
+                      <!-- 2 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/seminar.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/beer.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">オンライン飲み会</p>
+                                          <p class="box-text">週末に開催される交流会では、全国・全世界の仲間と気軽につながれます。</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
 
-              <button class="reset-btn" type="button">
-                <span>もう一度診断する</span>
-              </button>
-            </div>
+                      <!-- 3 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/gathering.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/hackathon.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">ハッカソン</p>
+                                          <p class="box-text">3人1組力を合わせて、チーム開発に挑戦する大会でさらにスキルアップ!</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
 
-            <h1>Chart test</h1>
-            <div class="flow-container progress-container">
-              <div class="progress"></div>
+                      <!-- 4 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/question-room.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/question.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">質問会</p>
+                                          <p class="box-text">初心者の方も安心。分からないことを気軽に聞ける時間を設けています</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
 
-              <ol class="steps-bar"></ol>
+                      <!-- 5 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/screen-sharing.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/pcs.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">画面共有学習</p>
+                                          <p class="box-text">画面を見せ合いながら学ぶことで、理解しやすく一緒に進めやすい環境です</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
 
-              <!-- 質問を表示するDIV -->
-              <div class="steps-container">
-                <div class="step-question-container">
-                  <h3 class="chart-question"></h3>
-                </div>
+                      <!-- 6 -->
+                      <li class="splide__slide">
+                          <div class="feed-box-wrapper">
+                              <div class="feed-layer feed-layer-1"></div>
+                              <div class="feed-layer feed-layer-2"></div>
+                              <div class="feed-box">
+                                  <img src="img/projects.png" class="feed-image" alt="">
+                                  <div class="feed-lower">
+                                      <img src="img/icons/shaking hands.png" class="icon" alt="">
+                                      <div class="feed-text">
+                                          <p class="box-title">案件紹介</p>
+                                          <p class="box-text">信頼できる仲間と案件を紹介し合い、仕事のきっかけを広げます</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
               </div>
+          </div>
+      </section>
 
-              <!-- 選択ボタン表示用DIV -->
-              <div class="choice-buttons"></div>
+        <!-- あなたに合うチャート診断 -->
+        <section id="chart">
+          <div class="chart-container">
+            <div class="chart-title">
+              <h1>チャート診断</h1>
+              <p>あなたにぴったりの使い方を提案します。</p>
+            </div>
+  
+            <div class="chart-wizard">
+              <!-- .completed -->
+              <div class="completed result-card" hidden>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+  
+                <button class="reset-btn" type="button">
+                  <span>もう一度診断する</span>
+                </button>
+              </div>
+  
+              <h1>Chart test</h1>
+              <div class="flow-container progress-container">
+                <div class="progress"></div>
+  
+                <ol class="steps-bar"></ol>
+  
+                <!-- 質問を表示するDIV -->
+                <div class="steps-container">
+                  <div class="step-question-container">
+                    <h3 class="chart-question"></h3>
+                  </div>
+                </div>
+  
+                <!-- 選択ボタン表示用DIV -->
+                <div class="choice-buttons"></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- テストで区切りのウェーブ入れてます -->
-      <!-- <div class="test-wave" style="line-height: 0">
-        <div class="wave-top"></div>
-        <h1>Hello wave</h1>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
-          <path
-            fill="#ca5431"
-            fill-opacity="1"
-            d="M0,128L48,122.7C96,117,192,107,288,85.3C384,64,480,32,576,37.3C672,43,768,85,864,128C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-        <div
-          class="wave-bottom"
-          style="background: #ca5431; height: 200px"
-        ></div>
-      </div> -->
+  
+        <!-- テストで区切りのウェーブ入れてます -->
+        <!-- <div class="test-wave" style="line-height: 0">
+          <div class="wave-top"></div>
+          <h1>Hello wave</h1>
+  
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+            <path
+              fill="#ca5431"
+              fill-opacity="1"
+              d="M0,128L48,122.7C96,117,192,107,288,85.3C384,64,480,32,576,37.3C672,43,768,85,864,128C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+          <div
+            class="wave-bottom"
+            style="background: #ca5431; height: 200px"
+          ></div>
+        </div> -->
+        </section>
+  
 
       <!-- 体験談 -->
       <section id="voice">
@@ -223,92 +340,86 @@
           世界中のメンバーから寄せられた実体験をご紹介します。
         </p>
 
-        <ul class="wrapper">
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-          <li>
-            <div class="upper">
-              <img src="img/avatars/avatar20.png" alt="" />
-              <div class="text">
-                <p class="name">AKiさん</p>
-                <p class="location">オーストラリア在住・エンジニア</p>
-              </div>
-            </div>
-            <p class="lower">
-              "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。
-              子育て中でも自分のペースで学習できています。"
-            </p>
-            <p class="star">★★★★☆</p>
-          </li>
-        </ul>
+          <ul class="wrapper">
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+              <li>
+                  <div class="upper">
+                      <img src="img/avatars/avatar20.png" alt="">
+                      <div class="text">
+                          <p class="name">AKiさん</p>
+                          <p class="location">オーストラリア在住・エンジニア</p>
+                      </div>
+                  </div>
+                  <p class="lower">
+                      "（仮）海外にいても仲間ができた！時差があっても誰かが必ずいるので、孤独感を感じることがありません。 子育て中でも自分のペースで学習できています。"
+                  </p>
+                  <p class="star">★★★★☆</p>
+              </li>
+          </ul>
       </section>
 
       <!-- アバターショーケース -->
@@ -481,7 +592,7 @@
               <li>20時間アクセス</li>
               <li>学習サポート</li>
               <li>コミュニティ参加</li>
-            </ul>
+
             <a href="#"><button class="price-btn">今すぐ始める</button></a>
           </div>
         </div>
@@ -503,10 +614,6 @@
         </div>
       </section>
 
-      <!-- フッター -->
-      <footer id="footer">
-        <small>© 2025 made by team global. All rights reserved.</small>
-      </footer>
 
       <!-- モーダルPop Up　BOX -->
       <div class="trial_modal_box">
@@ -538,8 +645,17 @@
       </div>
 
       <!-- SP 用ボタン -->
+             <!-- フッター -->
+      <footer id="footer">
+        <small>© 2025 made by team global. All rights reserved.</small>
+      </footer>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Splide.js用js読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+    <!-- AutoScroll拡張 -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.4.1/dist/js/splide-extension-auto-scroll.min.js"></script>
     <script src="main.js"></script>
     <script src="chart.js"></script>
   </body>
