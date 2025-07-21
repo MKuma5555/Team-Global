@@ -63,35 +63,27 @@ const resultData = [
   },
 ];
 
-// const chartQuestions = document.getElementById("chart-questions");
-
-// for (let i = 0; i < questionData.length; i++) {
-//   const chartQuestionOne = questionData[i];
-
-//   const chartCards = document.createElement("div");
-//   chartCards.classList.add("chart-question-card");
-
-//   const chartTitle = document.createElement("p");
-//   chartTitle.classList.add("chart-q-title");
-//   chartTitle.textContent = chartQuestionOne.question;
-//   chartCards.appendChild(chartTitle);
-
-//   for (let j = 0; j < chartQuestionOne.options.length; j++) {
-//     const chartAnswer1 = document.createElement("button");
-//     chartAnswer1.classList.add("chart-answer1");
-//     chartAnswer1.textContent = chartQuestionOne.options[j].text;
-//     chartAnswer1.value = chartQuestionOne.options[j].value;
-//     chartQuestions.appendChild(chartAnswer1);
-//   }
-
-//   chartQuestions.appendChild(chartCards);
-// }
-
 let currentStep = 0;
+
+function goToNextStep() {
+  if (currentStep < questionData.length - 1) {
+    currentStep++;
+    renderStepsBar(currentStep);
+    renderQuestion(currentStep);
+  }
+}
+
+function goToPrevStep() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderStepsBar(currentStep);
+    renderQuestion(currentStep);
+  }
+}
 
 const chartQuestions = document.getElementsByClassName("chart-question");
 const choiceButtons = document.querySelector(".choice-buttons");
-console.log(choiceButtons);
+
 const renderQuestion = (step) => {
   const question = questionData[step];
   if (chartQuestions.length > 0) {
@@ -105,15 +97,19 @@ const renderQuestion = (step) => {
     choiceButton.classList.add(`chart-answer${index + 1}`);
     choiceButton.textContent = option.text;
     choiceButton.value = option.value;
+
     choiceButton.addEventListener("click", () => {
       currentStep++;
       console.log("Current step:", currentStep);
+
       if (currentStep < questionData.length) {
+        renderStepsBar(currentStep); // ←ここが重要！
         renderQuestion(currentStep);
       } else {
         displayResult();
       }
     });
+
     choiceButtons.appendChild(choiceButton);
   });
 };
@@ -136,18 +132,26 @@ resetButton.addEventListener("click", () => {
   currentStep = 0;
   resultCard.hidden = true;
   choiceButtons.innerHTML = "";
+  renderStepsBar(currentStep); // ←リセット時もステップバー更新！
   renderQuestion(currentStep);
 });
 
-const stepsBar = document.querySelector(".steps-bar");
+function renderStepsBar(currentStep) {
+  const stepsBar = document.querySelector(".steps-bar");
+  stepsBar.innerHTML = ""; // 一度中身をリセット
 
-for (let i = 0; i < questionData.length; i++) {
-  const stepItem = document.createElement("li");
-  stepItem.textContent = `Step ${i + 1}`;
-  if (i === currentStep) {
-    stepItem.classList.add("current");
+  for (let i = 0; i < questionData.length; i++) {
+    const stepItem = document.createElement("li");
+    stepItem.textContent = `${i + 1}`;
+    if (i <= currentStep) {
+      stepItem.classList.add("current");
+    } else {
+      stepItem.classList.add("before");
+    }
+    stepsBar.appendChild(stepItem);
   }
-  stepsBar.appendChild(stepItem);
 }
 
+// 初期描画
+renderStepsBar(currentStep);
 renderQuestion(currentStep);

@@ -24,7 +24,7 @@ const scroll = () => {
 
 const updateVideo = () => {
   const diff = targetTime - vid.currentTime;
-  vid.currentTime += diff * 0.1; // 動画の再生位置を少しずつ調整
+  vid.currentTime += diff * 0.8; // 動画の再生位置を少しずつ調整
   if (Math.abs(diff) > 0.01) {
     requestAnimationFrame(updateVideo);
   } else {
@@ -161,5 +161,27 @@ dropdownLinks.forEach((itemLink) => {
     dropdownMenu.classList.remove("open");
     isOpen = false;
     menuIcon.innerHTML = hamburgerSVG;
+  });
+});
+
+const ball1 = document.getElementById("ball1");
+const ball2 = document.getElementById("ball2");
+const ball3 = document.getElementById("ball3");
+
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  ball1.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 100,
+    fill: "forwards",
+  });
+  ball2.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 300,
+    fill: "forwards",
+  });
+  ball3.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 600,
+    fill: "forwards",
   });
 });
