@@ -24,7 +24,7 @@ const scroll = () => {
 
 const updateVideo = () => {
   const diff = targetTime - vid.currentTime;
-  vid.currentTime += diff * 0.8; // 動画の再生位置を少しずつ調整
+  vid.currentTime += diff * 0.1; // 動画の再生位置を少しずつ調整
   if (Math.abs(diff) > 0.01) {
     requestAnimationFrame(updateVideo);
   } else {
@@ -37,10 +37,8 @@ window.addEventListener("scroll", scroll);
 
 // modal close  and timing of pop up button
 const mainTag = document.querySelector("main");
-const trialModalBox = document.querySelector(".trial_modal_box");
-const trialModalCloseButton = document.querySelector(
-  ".trial_modal_close_button"
-);
+const trialModalBox = document.querySelector(".modal_box");
+const trialModalCloseButton = document.querySelector(".modal_close_button");
 // This is the button to close the modal
 const backToTopBtn = document.querySelector(".back_to_top_btn");
 
@@ -109,6 +107,13 @@ const handleHeaderScroll = () => {
 handleHeaderScroll();
 window.addEventListener("scroll", handleHeaderScroll);
 window.addEventListener("resize", handleHeaderScroll);
+
+//
+const poppingText = document.querySelector(".popping-text");
+const text = poppingText.textContent;
+poppingText.innerHTML = [...text]
+  .map((char) => `<span>${char}</span>`)
+  .join("");
 
 // responsive menu
 const toggleButton = document.querySelector(".toggle_button");

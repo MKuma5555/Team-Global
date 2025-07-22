@@ -115,6 +115,45 @@ span {
   width: 100%;
   color: white;
 }
+.fv .vid .story .fv-main-title {
+  font-size: 18em;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.fv .vid .story .popping-text span {
+  display: inline-block;
+  opacity: 1;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+.fv .vid .story .popping-text span:hover {
+  -webkit-animation: pop 0.3s ease;
+          animation: pop 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+@-webkit-keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4) translateY(-5px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4) translateY(-5px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .fv .vid .story div {
   height: 100vh;
   display: flex;
@@ -123,12 +162,12 @@ span {
   text-align: center;
 }
 .fv .vid .story div h1 {
-  font-size: 3em;
+  font-size: 6em;
   font-weight: 900;
   line-height: 1.5;
 }
 
-.trial_modal_box {
+.modal_box {
   position: fixed;
   left: 2%;
   bottom: 20px;
@@ -142,24 +181,25 @@ span {
   box-sizing: border-box;
   overflow: hidden;
   text-align: center;
+  color: rgba(202, 84, 49, 0.5);
 }
-.trial_modal_box svg {
+.modal_box svg {
   float: right;
   cursor: pointer;
   margin: -0.5rem -0.5rem 0.5rem 0;
 }
-.trial_modal_box.trial_modal_box h2 {
+.modal_box.modal_box h2 {
   font-size: 1.5rem;
   margin-bottom: 0.8rem;
   color: #333;
 }
-.trial_modal_box.trial_modal_box .text {
+.modal_box.modal_box .text {
   font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 0.5rem;
   color: #555;
 }
-.trial_modal_box.trial_modal_box .trial_btn {
+.modal_box.modal_box .trial_btn {
   padding: 0.5rem 1rem;
   background-color: #dd9348;
   color: white;

@@ -85,6 +85,35 @@
       left: 0;
       width: 100%;
       color: white;
+      .fv-main-title {
+        font-size: 18em;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .popping-text span {
+        display: inline-block;
+        opacity: 1;
+        transition: transform 0.2s ease;
+        cursor: default;
+      }
+
+      .popping-text span:hover {
+        animation: pop 0.3s ease;
+        transition: opacity 0.3s ease;
+        opacity: 0.6;
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.4) translateY(-5px);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
 
       div {
         height: 100vh;
@@ -94,7 +123,7 @@
         text-align: center;
 
         h1 {
-          font-size: 3em;
+          font-size: 6em;
           font-weight: 900;
           line-height: 1.5;
         }
@@ -104,7 +133,7 @@
 }
 
 // モーダルCSS
-.trial_modal_box {
+.modal_box {
   position: fixed;
   left: 2%;
   bottom: 20px;
@@ -118,7 +147,7 @@
   box-sizing: border-box;
   overflow: hidden;
   text-align: center;
-
+  color: rgba($jasper, 0.5);
   svg {
     // SVG (クローズボタン) のスタイル
     float: right;
@@ -127,7 +156,7 @@
   }
 
   // 無料体験モーダルボックスのスタイル
-  &.trial_modal_box {
+  &.modal_box {
     h2 {
       font-size: 1.5rem;
       margin-bottom: 0.8rem;
