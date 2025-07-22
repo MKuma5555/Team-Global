@@ -24,7 +24,7 @@ const scroll = () => {
 
 const updateVideo = () => {
   const diff = targetTime - vid.currentTime;
-  vid.currentTime += diff * 0.1; // 動画の再生位置を少しずつ調整
+  vid.currentTime += diff * 0.8; // 動画の再生位置を少しずつ調整
   if (Math.abs(diff) > 0.01) {
     requestAnimationFrame(updateVideo);
   } else {
@@ -155,7 +155,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-// ドロップダウンメニューのリンクをクリックしたときにメニューを閉じる
+// 画面全体で使用 ドロップダウンメニューのリンクをクリックしたときにメニューを閉じる
 dropdownLinks.forEach((itemLink) => {
   itemLink.addEventListener("click", () => {
     dropdownMenu.classList.remove("open");
@@ -164,68 +164,88 @@ dropdownLinks.forEach((itemLink) => {
   });
 });
 
+const ball1 = document.getElementById("ball1");
+const ball2 = document.getElementById("ball2");
+const ball3 = document.getElementById("ball3");
 
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
 
+  ball1.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 100,
+    fill: "forwards",
+  });
+  ball2.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 300,
+    fill: "forwards",
+  });
+  ball3.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 600,
+    fill: "forwards",
+  });
+});
 
+// About section part
 // スライドする動き
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#feed-slider', {
-    type: 'loop',
+document.addEventListener("DOMContentLoaded", function () {
+  new Splide("#feed-slider", {
+    type: "loop",
     autoScroll: {
-      speed: 1.2,               // スクロール速度（数値を大きくすると速くなる）
-      pauseOnHover: true,       // ★ ホバーで一時停止する
-      pauseOnFocus: false       // フォーカスされても止めない
+      speed: 1.2, // スクロール速度（数値を大きくすると速くなる）
+      pauseOnHover: true, // ★ ホバーで一時停止する
+      pauseOnFocus: false, // フォーカスされても止めない
     },
-    arrows: false,              // 矢印不要なら false
-    pagination: false,          // ドットナビゲーション不要なら false
-    gap: '20px',                // スライド間の余白
-    perPage: 3,                 // 一度に表示する枚数
+    arrows: false, // 矢印不要なら false
+    pagination: false, // ドットナビゲーション不要なら false
+    gap: "20px", // スライド間の余白
+    perPage: 3, // 一度に表示する枚数
     breakpoints: {
       1024: { perPage: 2 },
-      768: { perPage: 1 }
-    }
+      768: { perPage: 1 },
+    },
   }).mount(window.splide.Extensions);
 });
 
 // マウスで掴む動き
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.splide__list');
-  const wrappers = document.querySelectorAll('.feed-box-wrapper');
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".splide__list");
+  const wrappers = document.querySelectorAll(".feed-box-wrapper");
 
   let startX = 0;
 
-  slider.addEventListener('mousedown', (e) => {
+  slider.addEventListener("mousedown", (e) => {
     startX = e.clientX;
-    slider.classList.add('is-grabbing');
+    slider.classList.add("is-grabbing");
 
-    wrappers.forEach(wrapper => {
-      wrapper.classList.remove('is-active-left', 'is-active-right');
+    wrappers.forEach((wrapper) => {
+      wrapper.classList.remove("is-active-left", "is-active-right");
     });
 
     const handleMouseMove = (e) => {
       const diffX = e.clientX - startX;
 
-      wrappers.forEach(wrapper => {
-        wrapper.classList.remove('is-active-left', 'is-active-right');
+      wrappers.forEach((wrapper) => {
+        wrapper.classList.remove("is-active-left", "is-active-right");
         if (diffX < -5) {
-          wrapper.classList.add('is-active-left'); // 左へドラッグ
+          wrapper.classList.add("is-active-left"); // 左へドラッグ
         } else if (diffX > 5) {
-          wrapper.classList.add('is-active-right'); // 右へドラッグ
+          wrapper.classList.add("is-active-right"); // 右へドラッグ
         }
       });
     };
 
     const handleMouseUp = () => {
-      slider.classList.remove('is-grabbing');
-      wrappers.forEach(wrapper => {
-        wrapper.classList.remove('is-active-left', 'is-active-right');
+      slider.classList.remove("is-grabbing");
+      wrappers.forEach((wrapper) => {
+        wrapper.classList.remove("is-active-left", "is-active-right");
       });
 
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
   });
 });
