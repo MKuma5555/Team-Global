@@ -3,7 +3,7 @@
 
 /* 波SVG */
 svg {
- display: block;
+  display: block;
 }
 
 // 料金
@@ -47,8 +47,16 @@ svg {
   }
 
   h3 {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
 
+  }
+
+  img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
   .price {

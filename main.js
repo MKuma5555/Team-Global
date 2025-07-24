@@ -254,17 +254,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 言語切り替え（フッター）
-document.getElementById('lang-ja').addEventListener('click', function () {
-  // 日本語に切り替える処理
-  document.documentElement.lang = 'ja';
-  // 必要に応じてページの内容を日本語に更新
-});
+// footer 言語切り替え
+document.addEventListener("DOMContentLoaded", function () {
+  // 言語切り替え（フッター）
+  document.getElementById('lang-ja').addEventListener('click', function () {
+    // 日本語に切り替える処理
+    document.documentElement.lang = 'ja';
+    // 必要に応じてページの内容を日本語に更新
+    console.log('日本語に切り替え');
+  });
 
-document.getElementById('lang-en').addEventListener('click', function () {
-  // 英語に切り替える処理
-  document.documentElement.lang = 'en';
-  // 必要に応じてページの内容を英語に更新
-const ball1 = document.getElementById("ball1");
-const ball2 = document.getElementById("ball2");
-const ball3 = document.getElementById("ball3"); 
+  document.getElementById('lang-en').addEventListener('click', function () {
+    // 英語に切り替える処理
+    document.documentElement.lang = 'en';
+    // 必要に応じてページの内容を英語に更新
+    console.log('英語に切り替え');
+  });
+});

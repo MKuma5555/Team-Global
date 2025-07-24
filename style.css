@@ -861,7 +861,14 @@ svg {
   margin-bottom: 50px;
 }
 .plan h3 {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.plan img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .plan .price {
   font-size: 24px;
@@ -1035,7 +1042,8 @@ svg {
   margin: 10px;
 }
 .footer-content .social-links a:hover {
-  color: #d3692e;
+  color: #ca5431;
+  transform: scale(1.1);
 }
 .footer-content .social-links i {
   font-size: 24px;
