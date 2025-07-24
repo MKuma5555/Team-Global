@@ -37,10 +37,8 @@ window.addEventListener("scroll", scroll);
 
 // modal close  and timing of pop up button
 const mainTag = document.querySelector("main");
-const trialModalBox = document.querySelector(".trial_modal_box");
-const trialModalCloseButton = document.querySelector(
-  ".trial_modal_close_button"
-);
+const trialModalBox = document.querySelector(".modal_box");
+const trialModalCloseButton = document.querySelector(".modal_close_button");
 // This is the button to close the modal
 const backToTopBtn = document.querySelector(".back_to_top_btn");
 
@@ -110,6 +108,13 @@ handleHeaderScroll();
 window.addEventListener("scroll", handleHeaderScroll);
 window.addEventListener("resize", handleHeaderScroll);
 
+//
+const poppingText = document.querySelector(".popping-text");
+const text = poppingText.textContent;
+poppingText.innerHTML = [...text]
+  .map((char) => `<span>${char}</span>`)
+  .join("");
+
 // responsive menu
 const toggleButton = document.querySelector(".toggle_button");
 const dropdownMenu = document.querySelector(".dropdown_menu");
@@ -155,7 +160,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-// ドロップダウンメニューのリンクをクリックしたときにメニューを閉じる
+// 画面全体で使用 ドロップダウンメニューのリンクをクリックしたときにメニューを閉じる
 dropdownLinks.forEach((itemLink) => {
   itemLink.addEventListener("click", () => {
     dropdownMenu.classList.remove("open");
@@ -164,6 +169,90 @@ dropdownLinks.forEach((itemLink) => {
   });
 });
 
+
+
+
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  ball1.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 100,
+    fill: "forwards",
+  });
+  ball2.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 300,
+    fill: "forwards",
+  });
+  ball3.animate([{ left: `${x}px`, top: `${y}px` }], {
+    duration: 600,
+    fill: "forwards",
+  });
+});
+
+// About section part
+// スライドする動き
+document.addEventListener("DOMContentLoaded", function () {
+  new Splide("#feed-slider", {
+    type: "loop",
+    autoScroll: {
+      speed: 1.2, // スクロール速度（数値を大きくすると速くなる）
+      pauseOnHover: true, // ★ ホバーで一時停止する
+      pauseOnFocus: false, // フォーカスされても止めない
+    },
+    arrows: false, // 矢印不要なら false
+    pagination: false, // ドットナビゲーション不要なら false
+    gap: "20px", // スライド間の余白
+    perPage: 3, // 一度に表示する枚数
+    breakpoints: {
+      1024: { perPage: 2 },
+      768: { perPage: 1 },
+    },
+  }).mount(window.splide.Extensions);
+});
+
+// マウスで掴む動き
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".splide__list");
+  const wrappers = document.querySelectorAll(".feed-box-wrapper");
+
+  let startX = 0;
+
+  slider.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    slider.classList.add("is-grabbing");
+
+    wrappers.forEach((wrapper) => {
+      wrapper.classList.remove("is-active-left", "is-active-right");
+    });
+
+    const handleMouseMove = (e) => {
+      const diffX = e.clientX - startX;
+
+      wrappers.forEach((wrapper) => {
+        wrapper.classList.remove("is-active-left", "is-active-right");
+        if (diffX < -5) {
+          wrapper.classList.add("is-active-left"); // 左へドラッグ
+        } else if (diffX > 5) {
+          wrapper.classList.add("is-active-right"); // 右へドラッグ
+        }
+      });
+    };
+
+    const handleMouseUp = () => {
+      slider.classList.remove("is-grabbing");
+      wrappers.forEach((wrapper) => {
+        wrapper.classList.remove("is-active-left", "is-active-right");
+      });
+
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  });
+});
 
 // 言語切り替え（フッター）
 document.getElementById('lang-ja').addEventListener('click', function () {
@@ -176,4 +265,6 @@ document.getElementById('lang-en').addEventListener('click', function () {
   // 英語に切り替える処理
   document.documentElement.lang = 'en';
   // 必要に応じてページの内容を英語に更新
-});
+const ball1 = document.getElementById("ball1");
+const ball2 = document.getElementById("ball2");
+const ball3 = document.getElementById("ball3"); 

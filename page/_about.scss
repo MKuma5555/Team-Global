@@ -2,32 +2,178 @@
 @use "../base/common" as *;
 
 #about {
-    text-align: center;
-    padding-bottom: 100px;
-    background-color: $butterscotch;
+  text-align: center;
+  padding-bottom: 100px;
+  background-color: rgba(221, 147, 72, 0.5);
+  // background-image: url(../img/bg1.png);
+  // background-repeat: none;
+  // background-size: 100%;
 
-    .section-title {
-        color: $champagne;
-        padding-block: 80px;
-        margin-block: 0;
-        position: relative;
+  .section-title {
+    color: $champagne;
+    padding-block: 85px;
+    margin-block: 0;
+    position: relative;
+    font-size: 30px;
+    text-shadow: -1px -1px 0 $jasper, 1px -1px 0 $jasper, -1px 1px 0 $jasper,
+      1px 1px 0 $jasper;
 
-        &:before {
-            content: "";
-            width: 150px;
-            height: 4px;
-            background-color: $jasper;
-            position: absolute;
-            top: 75%;
-            left: 43%;
+    &:before {
+      content: "";
+      width: 150px;
+      height: 4px;
+      background-color: $jasper;
+      position: absolute;
+      top: 75%;
+      left: 43%;
+    }
+  }
 
+  .sub-title {
+    color: $jasper;
+    padding-bottom: 50px;
+    margin-block: 0;
+    font-size: 18px;
+  }
+
+  .splide {
+    padding: 30px 0;
+    overflow: hidden;
+
+    .splide__list {
+      display: flex;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      &.is-grabbing .feed-box {
+        transform: scale(0.96);
+
+        .feed-layer {
+          opacity: 1;
         }
+      }
     }
 
-    .sub-title {
-        color: $champagne;
-        padding-bottom: 50px;
-        margin-block: 0;
+    .splide__slide {
+      margin-inline: 40px;
+      max-width: 300px;
+      flex-shrink: 0;
     }
 
+    .feed-box {
+      width: 330px;
+      height: 400px;
+      background-color: $champagne;
+      border-radius: 20px;
+      overflow: visible;
+      position: relative;
+      z-index: 10;
+      transition: transform 0.2s ease;
+      border: 3px solid $jasper;
+
+      .feed-image {
+        display: block;
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .feed-lower {
+        position: relative;
+        background-color: $champagne;
+        z-index: 10;
+        display: flex;
+        text-align: left;
+        align-items: flex-start;
+        padding: 30px 20px;
+
+        .icon {
+          width: 80px;
+          object-fit: contain;
+          vertical-align: bottom;
+        }
+
+        .feed-text {
+          width: 100%;
+          margin-left: 15px;
+
+          .box-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-block: 0;
+            margin-bottom: 15px;
+          }
+
+          .box-text {
+            margin-block: 0;
+          }
+        }
+      }
+    }
+
+    .feed-box-wrapper {
+      position: relative;
+
+      .feed-layer {
+        position: absolute;
+        width: 110%;
+        height: 95%;
+        top: 9px;
+        border-radius: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      // 掴んで右にドラッグした時
+      &.is-active-right {
+        .feed-layer-1 {
+          left: -3px;
+          right: 0;
+          background-color: rgba(246, 228, 200, 0.7);
+          transform: translateX(-1px);
+          z-index: -10;
+        }
+
+        .feed-layer-2 {
+          left: -7px;
+          right: 0;
+          background-color: rgba(202, 84, 49, 0.7);
+          transform: translateX(-8px);
+          z-index: -20;
+        }
+
+        .feed-layer {
+          opacity: 1;
+        }
+      }
+
+      // 掴んで左にドラッグした時
+      &.is-active-left {
+        .feed-layer-1 {
+          right: -8px;
+          left: 0;
+          background-color: rgba(246, 228, 200, 0.7);
+          transform: translateX(9px);
+          z-index: -10;
+        }
+
+        .feed-layer-2 {
+          right: -10px;
+          left: 0;
+          background-color: rgba(202, 84, 49, 0.7);
+          transform: translateX(20px);
+          z-index: -20;
+        }
+
+        .feed-layer {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

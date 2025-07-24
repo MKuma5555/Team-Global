@@ -1,4 +1,4 @@
-/*雰囲気 about*/
+/*体験談 voice*/
 @use "../base/common" as *;
 
 #voice {
@@ -9,6 +9,7 @@
         padding-block: 80px;
         margin-block: 0;
         position: relative;
+        font-size: 30px;
 
         &:before {
             content:"";
@@ -25,6 +26,7 @@
     .sub-title {
         padding-bottom: 50px;
         margin-block: 0;
+        font-size: 18px;
     }
 
     .wrapper {
