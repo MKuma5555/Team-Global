@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Global Web site</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -141,8 +142,8 @@
         <!-- 体験談 -->
         <section id="voice">
             <h2 class="section-title">実際に使っている人の声</h2>
-            <p class="sub-title">世界中のメンバーから寄せられた実体験をご紹介します。</p> 
-            
+            <p class="sub-title">世界中のメンバーから寄せられた実体験をご紹介します。</p>
+
             <ul class="wrapper">
                 <li>
                     <div class="upper">
@@ -355,7 +356,7 @@
 
         <!-- FAQ -->
         <section id="faq">
-            <h2 class="faq-title">よくある質問</h2>
+            <h2 class="faq-title">FAQ</h2>
             <p class="faq-subtitle">入会前の疑問や不安を解決！</p>
 
             <details>
@@ -379,45 +380,94 @@
                 <p>A クレジットカード、PayPayなど各種対応しています。</p>
             </details>
         </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150"><path fill="#d3692e" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,117.3C480,107,600,53,720,42.7C840,32,960,64,1080,85.3C1200,107,1320,117,1380,122.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
 
         <!-- 料金プラン -->
-        <section id="price" class="pricing-section">
-            <h2 class="pricing-title">料金</h2>
-            <div class="plans">
-                <div class="plan popular">
-                    <img src="img/logo-metaleaf.png" alt="" />
+        
+        <section id="price">
+            <h2 class="pricing-title">PRICE</h2>
+            <div class="flex-price">
 
-                    <div class="price">
-                        ¥500<span style="font-size: 14px"> / 月</span>
+                <div class="plans">
+                    <div class="plan popular">
+                        <h3>生徒プラン</h3>
+                        <img src="img/avatars/avatar7.png" alt="" />
+
+                        <div class="price">
+                            ¥000<span style="font-size: 14px"> / 月</span>
+                        </div>
+                        <ul>
+                            <li>全機能利用可能</li>
+                            <li>20時間アクセス</li>
+                            <li>学習サポート</li>
+                            <li>コミュニティ参加</li>
+                        </ul>
+                        <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url"><button
+                                class="price-btn">今すぐ始める</button></a>
                     </div>
-                    <ul>
-                        <li>全機能利用可能</li>
-                        <li>20時間アクセス</li>
-                        <li>学習サポート</li>
-                        <li>コミュニティ参加</li>
-                    </ul>
-                    <a href="#"><button class="price-btn">今すぐ始める</button></a>
+                </div>
+                <div class="plans">
+                    <div class="plan popular">
+                        <h3>卒業生プラン</h3>
+                        <img src="img/avatars/avatar8.png" alt="" />
+
+                        <div class="price">
+                            ¥0000<span style="font-size: 14px"> / 月</span>
+                        </div>
+                        <ul>
+                            <li>全機能利用可能</li>
+                            <li>20時間アクセス</li>
+                            <li>学習サポート</li>
+                            <li>コミュニティ参加</li>
+                        </ul>
+                        <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url"><button
+                                class="price-btn">今すぐ始める</button></a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 問い合わせ -->
-        <section id="contact">
-            <div class="btn-wrapper">
-                <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="btn-switch">
-                    <span class="default"> 無料カウンセリングを予約する </span>
-                    <span class="hover">
-                        <img src="img/line-icon.png" class="line-icon" alt="LINE" />
-                        友だち追加はこちら
-                    </span>
-                </a>
-            </div>
-        </section>
+
 
         <!-- フッター -->
         <footer id="footer">
-            <small>© 2025 made by team global. All rights reserved.</small>
+            <div class="footer-border">
+                <img src="img/obi.png" alt="Footer Image">
+            </div>
+
+            <!-- 問い合わせ -->
+            <div class="footer-content">
+                <section id="contact">
+                    <div class="btn-wrapper">
+                        <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="btn-switch">
+                            <span class="default"> 無料カウンセリングを予約する </span>
+                            <span class="hover">
+                                <img src="img/line-icon.png" class="line-icon" alt="LINE" />
+                                友だち追加はこちら
+                            </span>
+                        </a>
+                    </div>
+                    <div class="language-switcher">
+                        <button class="language-btn" id="lang-ja">JP</button>
+                        <span>|</span>
+                        <button class="language-btn" id="lang-en">EN</button>
+                    </div>
+                </section>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/your_account_1" target="_blank">かかし
+                        <i class="fab fa-instagram"></i>
+                    </a> |
+                    <a href="https://www.instagram.com/your_account_2" target="_blank">いるか
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="footer-text">
+                    <small>© 2025 made by team global. All rights reserved.</small>
+                </div>
+            </div>
+
         </footer>
+
 
         <!-- モーダルPop Up　BOX -->
         <div class="trial_modal_box">
