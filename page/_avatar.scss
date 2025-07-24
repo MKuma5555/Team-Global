@@ -2,28 +2,33 @@
 @use "../base/common" as *;
 
 .avatar-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  background-color: $butterscotch;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: $butterscotch;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 .logo-row {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    white-space: nowrap;
+    width: 100%;
 
   &.row-1 {
     animation: slideLeft 10s linear infinite;
   }
 
-  &.row-2 {
-    animation: slideRight 10s linear infinite;
-  }
+    &.row-2 {
+        animation: slideRight 10s linear infinite;
+
+    }
 
   &.row-3 {
     animation: slideLeft 10s linear infinite;
@@ -52,32 +57,46 @@
     height: 80px;
     object-fit: contain;
     border-radius: 50%;
-  }
+    background: $champagne;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
 }
 
-// 左に流れるアニメーション
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
 
-  100% {
-    transform: translateX(-50%);
-  }
+    100% {
+        transform: translateX(-40%);
+    }
 }
 
-// 右に流れるアニメーション
 @keyframes slideRight {
-  0% {
-    transform: translateX(-50%);
-  }
+    0% {
+        transform: translateX(-40%);
+    }
 
   100% {
     transform: translateX(0);
   }
 }
 
-/*レスポンシブデザイン*/
+/*avatar レスポンシブ*/
 @media (max-width: 768px) {
   .logo-item {
     width: 80px;
@@ -102,4 +121,5 @@
       height: 40px;
     }
   }
+}
 }
