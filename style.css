@@ -39,7 +39,8 @@ h2 {
 p,
 a,
 span,
-summary {
+summary,
+li {
   font-family: "Zen Kaku Gothic New", "Oswald", sans-serif;
 }
 
@@ -676,7 +677,7 @@ svg {
 #voice .voice-container .voice-grid .voice-card {
   background-color: #fff;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 20px;
   border: 2px solid #333;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -696,9 +697,11 @@ svg {
 #voice .voice-container .voice-grid .voice-card .title {
   color: #ca5431;
   margin-block: 0;
+  font-size: 0.8rem;
 }
 #voice .voice-container .voice-grid .voice-card .name {
   margin-block: 0;
+  font-size: 0.8rem;
 }
 #voice .voice-container .voice-grid .voice-card img {
   width: 80px;
@@ -710,6 +713,7 @@ svg {
 #voice .voice-container .voice-grid .voice-card .user {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
 }
 #voice .voice-container .voice-grid .voice-card .user img {
@@ -844,7 +848,7 @@ svg {
 #voice .voice-container .voice-grid .voice-card.mini img {
   position: absolute;
   bottom: 20px;
-  right: -25px;
+  left: -15px;
   border: 2px solid #333;
 }
 #voice .voice-container .voice-grid .voice-card.mini .stars {
