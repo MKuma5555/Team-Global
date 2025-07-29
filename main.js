@@ -270,4 +270,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // 必要に応じてページの内容を英語に更新
     console.log('英語に切り替え');
   });
+
+
+  // Voice レスポンシブ用slick
+  $('.voice-slider').slick({
+    centerMode: true,
+    centerPadding: '40px',
+    slidesToShow: 1,
+    arrows: true,
+    dots: true,
+    prevArrow: '<button type="button" class="slick-prev">&lt;</button>',
+    nextArrow: '<button type="button" class="slick-next">&gt;</button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          centerPadding: '20px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
 });
