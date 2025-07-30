@@ -372,7 +372,6 @@ li {
 /*できること section*/
 #feature {
   text-align: center;
-  padding-bottom: 100px;
 }
 #feature .color {
   background-color: #FFA734;
@@ -466,11 +465,11 @@ svg {
 }
 
 /*雰囲気 about*/
-svg {
+.wave-top {
   display: block;
   line-height: 0;
   position: relative;
-  top: 1px;
+  top: 60px;
 }
 
 #about {
@@ -480,7 +479,7 @@ svg {
 }
 #about .section-title {
   color: #fff;
-  padding-block: 85px;
+  padding: 0 0 80px;
   margin-block: 0;
   position: relative;
 }
@@ -928,6 +927,7 @@ svg {
 @media (max-width: 1024px) {
   #voice .voice-container .voice-slider {
     display: block;
+    padding: 30px 0;
   }
 }
 #voice .voice-container .voice-slider .slide-box {
@@ -935,20 +935,27 @@ svg {
   border-radius: 16px;
   padding: 30px 20px;
   height: 250px;
-  text-align: center;
+  text-align: left;
   margin: 0 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #voice .voice-container .voice-slider .slide-box {
     padding: 40px 20px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  #voice .voice-container .voice-slider .slide-box {
+    padding: 40px 10px;
   }
 }
 #voice .voice-container .voice-slider .slide-box p {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
+  margin: 0 20px 20px;
 }
 #voice .voice-container .voice-slider .slide-box .box-lower {
   margin-top: 10px;

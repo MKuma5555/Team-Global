@@ -367,17 +367,6 @@
                         border: 2px solid $black;
                     }
                 }
-
-                // 10. パキパキオレンジ
-                // &.orange {
-                //     background-color: #ffa836;
-                //     margin-top: 40px;
-                //     color: #fff;
-
-                //     .title {
-                //         color: #fff;
-                //     }
-                // }
             }
         }
 
@@ -391,29 +380,33 @@
 
             @include tb {
                 display: block;
+                padding: 30px 0;
             }
-
-
 
             .slide-box {
                 background: $white;
                 border-radius: 16px;
                 padding: 30px 20px;
                 height: 250px;
-                text-align: center;
+                text-align: left;
                 margin: 0 10px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
                 transition: transform 0.3s ease;
 
+                @include tb {
+                    padding: 40px 20px;
+                    height: auto;
+                }
 
                 @include sp {
-                    padding: 40px 20px;
+                    padding: 40px 10px;
                 }
 
                 p {
                     font-size: 16px;
                     line-height: 1.6;
                     color: #333;
+                    margin: 0 20px 20px;
                 }
 
                 .box-lower {
