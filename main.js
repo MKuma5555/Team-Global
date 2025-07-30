@@ -169,10 +169,6 @@ dropdownLinks.forEach((itemLink) => {
   });
 });
 
-const ball1 = document.getElementById("ball1");
-const ball2 = document.getElementById("ball2");
-const ball3 = document.getElementById("ball3");
-
 document.addEventListener("mousemove", (e) => {
   const x = e.clientX;
   const y = e.clientY;
@@ -252,5 +248,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
+  });
+});
+
+// footer 言語切り替え
+document.addEventListener("DOMContentLoaded", function () {
+  // 言語切り替え（フッター）
+  document.getElementById("lang-ja").addEventListener("click", function () {
+    // 日本語に切り替える処理
+    document.documentElement.lang = "ja";
+    // 必要に応じてページの内容を日本語に更新
+    console.log("日本語に切り替え");
+  });
+
+  document.getElementById("lang-en").addEventListener("click", function () {
+    // 英語に切り替える処理
+    document.documentElement.lang = "en";
+    // 必要に応じてページの内容を英語に更新
+    console.log("英語に切り替え");
+  });
+
+  // Voice レスポンシブ用slick
+  $(".voice-slider").slick({
+    centerMode: true,
+    centerPadding: "40px",
+    slidesToShow: 1,
+    arrows: true,
+    dots: true,
+    prevArrow: '<button type="button" class="slick-prev">&lt;</button>',
+    nextArrow: '<button type="button" class="slick-next">&gt;</button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          centerPadding: "20px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
 });

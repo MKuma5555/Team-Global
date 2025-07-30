@@ -1,63 +1,103 @@
 /* Price table */
-#pricing-section {
+@use "../base/common" as *;
+
+/* 波SVG */
+svg {
+  display: block;
+}
+
+// 料金
+#price {
+  background-color: $cocoa-brown;
+}
+
+.flex-price {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: stretch;
 }
 
 .pricing-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: center;
+  // font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  color: $champagne;
+
 }
 
 .plan {
-    margin: 0 auto 60px;
-    background: #f6e4c8;
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 400px;
-    box-shadow: 0 4px 20px #d3692e;
-    text-align: center;
-    position: relative;
-}
+  margin: 0 auto 5px;
+  background-color: $champagne;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 400px;
+  // box-shadow: 0 4px 20px $cocoa-brown;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  height: auto;
 
-.plan .price {
+  &s {
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+  }
+
+  img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .price {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0 20px;
-    color: #ca5431;
-}
+    color: $butterscotch;
+  }
 
-.plan ul {
+  ul {
     list-style: none;
     padding: 0;
     margin: 0 0 20px;
-}
-
-.plan ul li {
-    margin-bottom: 8px;
-}
-
-
-.price-btn {
-  background-color: #d3692e;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: #ca5431;
-    transform: translateY(-1px); 
-    box-shadow: 0 4px 8px #d3692e;
+    flex-grow: 1;
   }
 
-  &:active {
-    transform: translateY(2px); 
-    box-shadow: 0 1px 2px #d3692e; /* 影も薄くしてへこむ感じ */
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  .price-btn {
+    background-color: $butterscotch;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: $jasper;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px $butterscotch;
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 2px $butterscotch;
+    }
   }
 }

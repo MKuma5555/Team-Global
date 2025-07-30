@@ -49,8 +49,9 @@
             color: white;
 
             &:hover {
-              text-decoration: underline;
-              color: $jasper;
+              // text-decoration: underline;
+              color: $green;
+              font-weight: 900;
             }
           }
         }
@@ -161,7 +162,7 @@
   position: fixed;
   left: 2%;
   bottom: 20px;
-  z-index: 99999999;
+  z-index: 2000;
   width: 220px;
   height: auto;
   background-color: #ffffff;
@@ -189,21 +190,43 @@
     .text {
       font-size: 0.9rem;
       line-height: 1.4;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
       color: #555;
+      &:last-child {
+        margin-bottom: 2rem;
+      }
     }
 
     .trial_btn {
       padding: 0.5rem 1rem;
-      background-color: $butterscotch;
+      background-color: #dd9348;
       color: white;
       border: none;
       border-radius: 0.3rem;
       cursor: pointer;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       white-space: normal;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: #c8721f;
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active {
+        transform: translateY(-2px) scale(0.97);
+        background-color: #b96418;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+    a {
+      text-decoration: none;
     }
   }
 }

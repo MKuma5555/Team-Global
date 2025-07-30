@@ -6,6 +6,11 @@ $cocoa-brown: #d3692e;
 /* アクセントカラー：装飾色 */
 $jasper: #ca5431;
 /* アクセントカラー：主にテキストカラー */
+$white: #fff;
+$black: #333;
+$orange: #FFA734;
+$mint-green: #B5E0D8;
+$green: #49A291;
 
 body {
   line-height: 1.6;
@@ -37,16 +42,21 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Noto Sans JP",
+  font-family: "Oswald",
     // 和文
-    "Oswald",
+    "Noto Sans JP",
     // 英文
     sans-serif; // 保険
 }
 
+h2 {
+  font-size: 40px;
+}
+
 p,
 a,
-span {
+span,
+summary {
   font-family: "Zen Kaku Gothic New",
     // 和文フォント
     "Oswald",
@@ -56,8 +66,16 @@ span {
 
 // _mixin.scss：書き出し(mixin)：レスポンシブ
 $sp: 768px;
+$tb: 1024px; 
+
 @mixin sp {
   @media (max-width: $sp) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media (max-width: $tb) {
     @content;
   }
 }
