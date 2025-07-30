@@ -80,13 +80,14 @@ span {
   font-weight: 300;
   cursor: pointer;
   text-decoration: none;
-  color: #ca5431;
+  color: white;
 }
 .fv header nav ul li a:hover {
   text-decoration: underline;
+  color: #ca5431;
 }
 .fv .vid {
-  height: 500vh;
+  height: 450vh;
   position: relative;
 }
 .fv .vid .holder {
@@ -94,11 +95,8 @@ span {
   position: sticky;
   top: 0;
   width: 100%;
-  /* 幅は親要素に合わせる */
   height: 100vh;
-  /* 常に画面の高さに固定 */
   overflow: hidden;
-  /* はみ出た部分を隠す */
 }
 .fv .vid video {
   width: 100%;
@@ -115,18 +113,29 @@ span {
   width: 100%;
   color: white;
 }
-.fv .vid .story .fv-main-title {
-  font-size: 18em;
+.fv .vid .story div {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.fv .vid .story .main-title {
+  height: 100vh;
+  align-items: center;
+}
+.fv .vid .story .main-title .fv-main-title {
+  font-size: 18vw;
   font-weight: 900;
   line-height: 1.5;
 }
-.fv .vid .story .popping-text span {
+.fv .vid .story .main-title .popping-text span {
   display: inline-block;
   opacity: 1;
   transition: transform 0.2s ease;
   cursor: default;
 }
-.fv .vid .story .popping-text span:hover {
+.fv .vid .story .main-title .popping-text span:hover {
   -webkit-animation: pop 0.3s ease;
           animation: pop 0.3s ease;
   transition: opacity 0.3s ease;
@@ -154,17 +163,28 @@ span {
     transform: scale(1);
   }
 }
-.fv .vid .story div {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.fv .vid .story .subtitle {
+  padding: 1rem;
+  height: 70vh;
 }
-.fv .vid .story div h1 {
-  font-size: 6em;
+.fv .vid .story .subtitle:nth-child(2) {
+  justify-content: flex-end;
+  padding-left: 10%;
+}
+.fv .vid .story .subtitle:nth-child(3) {
+  justify-content: start;
+}
+.fv .vid .story .subtitle:nth-child(4) {
+  justify-content: end;
+}
+.fv .vid .story .subtitle:nth-child(5) {
+  justify-content: center;
+}
+.fv .vid .story .subtitle h1 {
+  font-size: 3vw;
   font-weight: 900;
   line-height: 1.5;
+  width: auto;
 }
 
 .modal_box {
@@ -216,7 +236,7 @@ span {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999999;
+  z-index: 2000;
   background-color: #f6e4c8;
   padding: 10px 20px;
   border-radius: 50%;
@@ -247,24 +267,24 @@ span {
     display: none;
   }
   .fv .vid {
-    height: 200vh;
+    height: 400vh;
   }
   .fv .vid .holder {
     width: 100%;
     height: 100vh;
   }
   .fv .vid video {
-    /* ここを変更 */
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
   }
-  .fv .vid .story div {
-    height: 50vh;
+  .fv .vid .story .subtitle {
+    padding: 1rem;
+    height: 40vh;
   }
-  .fv .vid .story div h1 {
-    font-size: 1.3rem;
+  .fv .vid .story .subtitle h1 {
+    font-size: 4vw;
     font-weight: 500;
     line-height: 1;
   }
@@ -294,15 +314,14 @@ span {
   width: 300px;
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .dropdown_menu.open {
   max-height: 500px;
-  /* 必要に応じて内容に合わせて調整 */
 }
 .dropdown_menu ul {
   padding: 0;
@@ -318,7 +337,7 @@ span {
   text-decoration: none;
 }
 .dropdown_menu ul li a:hover {
-  color: #ff7f50;
+  color: #ca5431;
 }
 
 @media (max-width: 992px) {
