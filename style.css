@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
-/* ベースカラー：主に背景 */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"); /* ベースカラー：主に背景 */
 /* メインカラー：主たる装飾色 */
 /* アクセントカラー：装飾色 */
 /* アクセントカラー：主にテキストカラー */
@@ -85,24 +84,23 @@ summary {
   font-weight: 300;
   cursor: pointer;
   text-decoration: none;
-  color: #ca5431;
+  color: white;
 }
 .fv header nav ul li a:hover {
-  text-decoration: underline;
+  color: #49A291;
+  font-weight: 900;
 }
 .fv .vid {
-  height: 500vh;
+  height: 450vh;
   position: relative;
 }
 .fv .vid .holder {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
-  /* 幅は親要素に合わせる */
   height: 100vh;
-  /* 常に画面の高さに固定 */
   overflow: hidden;
-  /* はみ出た部分を隠す */
 }
 .fv .vid video {
   width: 100%;
@@ -119,21 +117,44 @@ summary {
   width: 100%;
   color: white;
 }
-.fv .vid .story .fv-main-title {
-  font-size: 18em;
+.fv .vid .story div {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.fv .vid .story .main-title {
+  height: 100vh;
+  align-items: center;
+}
+.fv .vid .story .main-title .fv-main-title {
+  font-size: 18vw;
   font-weight: 900;
   line-height: 1.5;
 }
-.fv .vid .story .popping-text span {
+.fv .vid .story .main-title .popping-text span {
   display: inline-block;
   opacity: 1;
   transition: transform 0.2s ease;
   cursor: default;
 }
-.fv .vid .story .popping-text span:hover {
-  animation: pop 0.3s ease;
+.fv .vid .story .main-title .popping-text span:hover {
+  -webkit-animation: pop 0.3s ease;
+          animation: pop 0.3s ease;
   transition: opacity 0.3s ease;
   opacity: 0.6;
+}
+@-webkit-keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4) translateY(-5px);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @keyframes pop {
   0% {
@@ -146,24 +167,35 @@ summary {
     transform: scale(1);
   }
 }
-.fv .vid .story div {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.fv .vid .story .subtitle {
+  padding: 1rem;
+  height: 70vh;
 }
-.fv .vid .story div h1 {
-  font-size: 6em;
+.fv .vid .story .subtitle:nth-child(2) {
+  justify-content: flex-end;
+  padding-left: 10%;
+}
+.fv .vid .story .subtitle:nth-child(3) {
+  justify-content: start;
+}
+.fv .vid .story .subtitle:nth-child(4) {
+  justify-content: end;
+}
+.fv .vid .story .subtitle:nth-child(5) {
+  justify-content: center;
+}
+.fv .vid .story .subtitle h1 {
+  font-size: 3vw;
   font-weight: 900;
   line-height: 1.5;
+  width: auto;
 }
 
 .modal_box {
   position: fixed;
   left: 2%;
   bottom: 20px;
-  z-index: 99999999;
+  z-index: 2000;
   width: 220px;
   height: auto;
   background-color: #ffffff;
@@ -188,8 +220,12 @@ summary {
 .modal_box.modal_box .text {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
   color: #555;
+}
+.modal_box.modal_box .text:last-child {
+  margin-bottom: 2rem;
 }
 .modal_box.modal_box .trial_btn {
   padding: 0.5rem 1rem;
@@ -198,17 +234,33 @@ summary {
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.modal_box.modal_box .trial_btn:hover {
+  background-color: #c8721f;
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.modal_box.modal_box .trial_btn:active {
+  transform: translateY(-2px) scale(0.97);
+  background-color: #b96418;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+.modal_box.modal_box a {
+  text-decoration: none;
 }
 
 .back_to_top_btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999999;
+  z-index: 2000;
   background-color: #f6e4c8;
   padding: 10px 20px;
   border-radius: 50%;
@@ -239,24 +291,24 @@ summary {
     display: none;
   }
   .fv .vid {
-    height: 200vh;
+    height: 400vh;
   }
   .fv .vid .holder {
     width: 100%;
     height: 100vh;
   }
   .fv .vid video {
-    /* ここを変更 */
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
   }
-  .fv .vid .story div {
-    height: 50vh;
+  .fv .vid .story .subtitle {
+    padding: 1rem;
+    height: 40vh;
   }
-  .fv .vid .story div h1 {
-    font-size: 1.3rem;
+  .fv .vid .story .subtitle h1 {
+    font-size: 4vw;
     font-weight: 500;
     line-height: 1;
   }
@@ -286,15 +338,14 @@ summary {
   width: 300px;
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .dropdown_menu.open {
   max-height: 500px;
-  /* 必要に応じて内容に合わせて調整 */
 }
 .dropdown_menu ul {
   padding: 0;
@@ -310,7 +361,7 @@ summary {
   text-decoration: none;
 }
 .dropdown_menu ul li a:hover {
-  color: #ff7f50;
+  color: #ca5431;
 }
 
 @media (max-width: 992px) {
@@ -505,9 +556,11 @@ svg {
 }
 #about .splide .splide__list {
   display: flex;
+  cursor: -webkit-grab;
   cursor: grab;
 }
 #about .splide .splide__list:active {
+  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 #about .splide .splide__list.is-grabbing .feed-box {
@@ -1034,13 +1087,16 @@ svg {
   width: 100%;
 }
 .logo-row.row-1 {
-  animation: slideLeft 10s linear infinite;
+  -webkit-animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 .logo-row.row-2 {
-  animation: slideRight 10s linear infinite;
+  -webkit-animation: slideRight 10s linear infinite;
+          animation: slideRight 10s linear infinite;
 }
 .logo-row.row-3 {
-  animation: slideLeft 10s linear infinite;
+  -webkit-animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 
 .logo-item {
@@ -1081,12 +1137,28 @@ svg {
      object-fit: contain;
   border-radius: 50%;
 }
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-40%);
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 @keyframes slideRight {
@@ -1432,15 +1504,14 @@ svg {
 }
 
 #chart {
-  background-color: #a71555;
   display: flex;
   justify-content: center;
-  background-image: url("/img/bg1.png");
+  background-image: url("/img/bg2.png");
   background-repeat: repeat;
 }
 
 .chart-question {
-  color: var(--main-color);
+  color: #444;
 }
 
 /* form styles */
@@ -1449,6 +1520,7 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
   gap: 16px;
   padding: 16px;
   margin: 5rem 2rem 5rem 2rem;
@@ -1478,7 +1550,7 @@ svg {
 .chart-container .chart-wizard .progress-container .progress {
   height: 4px;
   width: var(--progress-width);
-  background-color: var(--main-color);
+  background-color: #B5E0D8;
   position: absolute;
   top: calc(var(--step-size) / 2);
   left: 50%;
@@ -1528,8 +1600,8 @@ svg {
   display: none;
 }
 .chart-container .chart-wizard .progress-container .steps-bar .current {
-  color: #fff;
-  background-color: #c41e67;
+  color: #444;
+  background-color: #B5E0D8;
 }
 
 /* if page is rtl adjust the transform origin */
@@ -1571,13 +1643,14 @@ html[dir=rtl] .progress-container .progress {
   border: none;
   border-radius: 16px;
   padding: 8px 16px;
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: #B5E0D8;
+  color: #444;
   font-size: 0.875rem;
   transition: 0.3s;
 }
 .choice-buttons button:hover, .choice-buttons button:active {
-  background-color: var(--dark-color);
+  background-color: #49A291;
+  color: #fff;
 }
 .choice-buttons button:disabled {
   opacity: 0.8;
@@ -1656,4 +1729,19 @@ html[dir=rtl] .progress-container .progress {
 }
 .chart-div .line-step ol li:last-child::before {
   display: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+#chart .section-title {
+  position: relative;
+}
+#chart .section-title::before {
+  content: "";
+  width: 150px;
+  height: 4px;
+  background-color: rgb(221, 147, 72);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*# sourceMappingURL=style.css.map */

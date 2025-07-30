@@ -155,3 +155,10 @@ function renderStepsBar(currentStep) {
 // 初期描画
 renderStepsBar(currentStep);
 renderQuestion(currentStep);
+
+//
+// const chartStartBtn = document.getElementsByClassName("chart-start")[0]; // Access the first element
+
+// chartStartBtn.addEventListener("click", () => {
+//   console.log("Start button clicked");
+// });
