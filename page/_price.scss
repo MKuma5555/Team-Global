@@ -1,39 +1,60 @@
-/* Price table */
-@use "../base/common" as *;
+/* Price Section */
+@use "../base/common" as *; // 色やmixin共通
 
 /* 波SVG */
 svg {
   display: block;
 }
 
-// 料金
+/* 料金セクション全体 */
 #price {
   background-color: $cocoa-brown;
+  padding: 60px 0;
+
+  @include sp {
+    padding: 40px 0;
+  }
 }
 
+/* フレックス配置（PCは横並び、SPは縦並び） */
 .flex-price {
   display: flex;
   justify-content: center;
   gap: 30px;
   align-items: stretch;
+  flex-wrap: wrap;
+
+  @include sp {
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+  }
 }
 
+/* 見出し */
 .pricing-title {
-  // font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 40px;
   color: $champagne;
+  font-size: 28px;
 
+  @include sp {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 }
 
+/* プランカード */
 .plan {
   margin: 0 auto 5px;
   background-color: $champagne;
   padding: 40px;
   border-radius: 10px;
-  max-width: 400px;
-  // box-shadow: 0 4px 20px $cocoa-brown;
+  max-width: 400px; 
   text-align: center;
   position: relative;
   display: flex;
@@ -41,17 +62,28 @@ svg {
   justify-content: space-between;
   min-height: 400px;
   height: auto;
+  transition: transform 0.2s ease;
 
-  &s {
-    margin-bottom: 50px;
+  &:hover {
+    transform: translateY(-5px);
   }
 
+  /* レスポンシブスマホ*/
+ @include sp {
+  width: calc(100% - 80px); 
+  max-width: none;
+  padding: 30px;
+  margin: 0 auto;           
+  min-height: auto;
+}
+
+  /* タイトル */
   h3 {
     margin-top: 0;
     margin-bottom: 5px;
-
   }
 
+  /* アイコン画像 */
   img {
     width: 80px;
     height: auto;
@@ -59,24 +91,31 @@ svg {
     margin: 0 auto;
   }
 
+  /* 価格 */
   .price {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0 20px;
     color: $butterscotch;
+
+    @include sp {
+      font-size: 20px;
+    }
   }
 
+  /* リスト */
   ul {
     list-style: none;
     padding: 0;
     margin: 0 0 20px;
     flex-grow: 1;
+
+    li {
+      margin-bottom: 8px;
+    }
   }
 
-  ul li {
-    margin-bottom: 8px;
-  }
-
+  /* ボタン */
   .price-btn {
     background-color: $butterscotch;
     color: white;
@@ -90,14 +129,14 @@ svg {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 
     &:hover {
-      background-color: $jasper;
+      background-color: $green;
       transform: translateY(-1px);
-      box-shadow: 0 4px 8px $butterscotch;
+      box-shadow: 0 4px 8px $mint-green;
     }
 
     &:active {
       transform: translateY(2px);
-      box-shadow: 0 1px 2px $butterscotch;
+      box-shadow: 0 1px 2px $mint-green;
     }
   }
 }
