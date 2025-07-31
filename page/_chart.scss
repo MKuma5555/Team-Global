@@ -1,3 +1,4 @@
+@use "../base/common" as *;
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
 
 :root {
@@ -10,15 +11,14 @@
 }
 
 #chart {
-  background-color: #a71555;
   display: flex;
   justify-content: center;
-  background-image: url("/img/bg1.png");
+  background-image: url("/img/bg2.png");
   background-repeat: repeat;
 }
 
 .chart-question {
-  color: var(--main-color);
+  color: #444;
 }
 /* form styles */
 .chart-container {
@@ -26,6 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
   gap: 16px;
   padding: 16px;
   margin: 5rem 2rem 5rem 2rem;
@@ -55,7 +56,7 @@
       .progress {
         height: 4px;
         width: var(--progress-width);
-        background-color: var(--main-color);
+        background-color: $mint-green;
         position: absolute;
         top: calc(var(--step-size) / 2);
         left: 50%;
@@ -107,8 +108,8 @@
           }
         }
         .current {
-          color: #fff;
-          background-color: #c41e67;
+          color: #444;
+          background-color: $mint-green;
         }
       }
     }
@@ -154,15 +155,16 @@ html[dir="rtl"] .progress-container .progress {
     border: none;
     border-radius: 16px;
     padding: 8px 16px;
-    background-color: var(--main-color);
-    color: #fff;
+    background-color: $mint-green;
+    color: #444;
     font-size: 0.875rem;
     transition: 0.3s;
 
     // Styles for hover and active states
     &:hover,
     &:active {
-      background-color: var(--dark-color);
+      background-color: $green;
+      color: #fff;
     }
 
     // Style for disabled state
@@ -253,6 +255,22 @@ html[dir="rtl"] .progress-container .progress {
           display: none;
         }
       }
+    }
+  }
+}
+#chart {
+  .section-title {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 150px;
+      height: 4px;
+      background-color: rgb(221, 147, 72);
+      position: absolute;
+      bottom: -10px; // タイトル下に少し余白
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

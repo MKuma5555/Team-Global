@@ -46,10 +46,12 @@
             font-weight: 300;
             cursor: pointer;
             text-decoration: none;
-            color: $jasper;
+            color: white;
 
             &:hover {
-              text-decoration: underline;
+              // text-decoration: underline;
+              color: $green;
+              font-weight: 900;
             }
           }
         }
@@ -58,18 +60,15 @@
   }
 
   .vid {
-    height: 500vh;
+    height: 450vh;
     position: relative;
 
     .holder {
       position: sticky;
       top: 0;
       width: 100%;
-      /* 幅は親要素に合わせる */
       height: 100vh;
-      /* 常に画面の高さに固定 */
       overflow: hidden;
-      /* はみ出た部分を隠す */
     }
 
     video {
@@ -85,47 +84,73 @@
       left: 0;
       width: 100%;
       color: white;
-      .fv-main-title {
-        font-size: 18em;
-        font-weight: 900;
-        line-height: 1.5;
-      }
-      .popping-text span {
-        display: inline-block;
-        opacity: 1;
-        transition: transform 0.2s ease;
-        cursor: default;
-      }
-
-      .popping-text span:hover {
-        animation: pop 0.3s ease;
-        transition: opacity 0.3s ease;
-        opacity: 0.6;
-      }
-
-      @keyframes pop {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.4) translateY(-5px);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
       div {
-        height: 100vh;
+        height: 70vh;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-align: center;
-
-        h1 {
-          font-size: 6em;
+        justify-content: center;
+      }
+      .main-title {
+        height: 100vh;
+        align-items: center;
+        .fv-main-title {
+          font-size: 18vw;
           font-weight: 900;
           line-height: 1.5;
+        }
+        .popping-text span {
+          display: inline-block;
+          opacity: 1;
+          transition: transform 0.2s ease;
+          cursor: default;
+        }
+
+        .popping-text span:hover {
+          animation: pop 0.3s ease;
+          transition: opacity 0.3s ease;
+          opacity: 0.6;
+        }
+
+        @keyframes pop {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.4) translateY(-5px);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+
+      .subtitle {
+        padding: 1rem;
+        height: 70vh;
+        // &:nth-child(1) {
+        //   justify-content: flex-end;
+        // }
+
+        &:nth-child(2) {
+          justify-content: flex-end;
+          padding-left: 10%;
+        }
+        &:nth-child(3) {
+          justify-content: start;
+        }
+        &:nth-child(4) {
+          justify-content: end;
+        }
+        &:nth-child(5) {
+          justify-content: center;
+        }
+
+        h1 {
+          font-size: 3vw;
+          font-weight: 900;
+          line-height: 1.5;
+          width: auto;
         }
       }
     }
@@ -137,7 +162,7 @@
   position: fixed;
   left: 2%;
   bottom: 20px;
-  z-index: 99999999;
+  z-index: 2000;
   width: 220px;
   height: auto;
   background-color: #ffffff;
@@ -149,7 +174,6 @@
   text-align: center;
   color: rgba($jasper, 0.5);
   svg {
-    // SVG (クローズボタン) のスタイル
     float: right;
     cursor: pointer;
     margin: -0.5rem -0.5rem 0.5rem 0;
@@ -166,21 +190,43 @@
     .text {
       font-size: 0.9rem;
       line-height: 1.4;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
       color: #555;
+      &:last-child {
+        margin-bottom: 2rem;
+      }
     }
 
     .trial_btn {
       padding: 0.5rem 1rem;
-      background-color: $butterscotch; // メインカラーを使用
+      background-color: #dd9348;
       color: white;
       border: none;
       border-radius: 0.3rem;
       cursor: pointer;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       white-space: normal;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: #c8721f;
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active {
+        transform: translateY(-2px) scale(0.97);
+        background-color: #b96418;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+    a {
+      text-decoration: none;
     }
   }
 }
@@ -190,7 +236,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999999;
+  z-index: 2000;
   background-color: $champagne;
   padding: 10px 20px;
   border-radius: 50%;
@@ -210,8 +256,6 @@
   }
 }
 
-// End of main visual styles
-
 // Responsive part
 
 @media (max-width: 768px) {
@@ -230,7 +274,7 @@
   }
 
   .fv .vid {
-    height: 200vh;
+    height: 400vh;
 
     .holder {
       width: 100%;
@@ -238,17 +282,20 @@
     }
 
     video {
-      /* ここを変更 */
       object-fit: cover;
       object-position: center;
     }
 
     .story {
-      div {
-        height: 50vh;
+      .subtitle {
+        padding: 1rem;
+        height: 40vh;
+
+        // div {
+        //   height: 50vh;
 
         h1 {
-          font-size: 1.3rem;
+          font-size: 4vw;
           font-weight: 500;
           line-height: 1;
         }
@@ -286,14 +333,13 @@
   width: 300px;
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &.open {
     max-height: 500px;
-    /* 必要に応じて内容に合わせて調整 */
   }
 
   ul {
@@ -310,7 +356,7 @@
         text-decoration: none;
 
         &:hover {
-          color: #ff7f50; // $jasper 相当
+          color: $jasper;
         }
       }
     }
@@ -334,9 +380,9 @@
 
 @media (max-width: 576px) {
   .dropdown_menu {
-    right: 1rem; // スマホでは右端に寄せる
-    top: 5em; // トップ位置を調整
-    width: calc(100% - 2rem); // 幅を画面幅に合わせる
+    right: 1rem;
+    top: 5em;
+    width: calc(100% - 2rem);
   }
 }
 
