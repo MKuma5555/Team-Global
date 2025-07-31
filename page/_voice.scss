@@ -2,73 +2,490 @@
 @use "../base/common" as *;
 
 #voice {
-    text-align: center;
-    padding-bottom: 100px;
+    padding: 0 10% 200px;
+    background-color: $champagne;
+
+    @include tb {
+        padding: 0 40px 100px;
+    }
+
+    @include sp {
+        padding: 0 16px 100px;
+    }
 
     .section-title {
+        text-align: center;
         padding-block: 80px;
-        margin-block: 0;
+        margin: 0;
         position: relative;
-        font-size: 30px;
 
-        &:before {
-            content:"";
+        &::before {
+            content: "";
             width: 150px;
             height: 4px;
             background-color: $butterscotch;
             position: absolute;
             top: 75%;
-            left: 43%;
-
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 
     .sub-title {
-        padding-bottom: 50px;
-        margin-block: 0;
+        text-align: center;
+        padding-bottom: 100px;
+        margin: 0;
         font-size: 18px;
+
+        @include tb {
+            padding-bottom: 50px;
+        }
     }
 
-    .wrapper {
-        display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        text-align: left;
+    .voice-container {
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 2rem;
+            align-items: start;
 
-        li {
-            list-style: none;
-            background-color: $champagne;
-            border-top: 7px solid $jasper;
-            border-bottom: 1px solid $jasper;
-            border-inline: 1px solid $jasper;
-            box-shadow: 1px 1px 5px $jasper;
-            border-radius: 30px;
-            padding: 40px 40px;
+            @include tb {
+                display: none;
+            }
 
-            .upper {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 30px;
+            .voice-card {
+                // 共通スタイル
+                background-color: $white;
+                border-radius: 20px;
+                padding: 1.5rem;
+                border: 2px solid $black;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                position: relative;
+
+                &:hover {
+                    scale: (1.1);
+                    transition: all 0.3s;
+                }
+
+                .comment {
+                    margin-bottom: 1rem;
+                }
+
+                .stars {
+                    color: $jasper;
+                    font-weight: bold;
+                    margin-block: 0;
+                }
+
+                .title {
+                    color: $jasper;
+                    margin-block: 0;
+                }
+
+                .name {
+                    margin-block: 0;
+                }
 
                 img {
-                    width: 50px;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
                 }
 
-                .text {
-                    margin-left: 15px;
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
 
-                    .name {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                // 1. 枠あり・吹き出し型
+                &.bubble {
+                    background-color: $butterscotch;
+                    color: $white;
+
+                    .title {
+                        color: $white;
+                    }
+
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -11px;
+                        left: 32px;
+                        border-style: solid;
+                    }
+
+                    // 外側の三角（= borderの色になる部分）
+                    &::before {
+                        border-width: 11px 11px 0;
+                        border-color: black transparent transparent transparent;
+                        z-index: 0;
+                    }
+
+                    // 内側の三角（=白い吹き出し）
+                    &::after {
+                        bottom: -8px; // 少し上にずらす
+                        border-width: 10px 10px 0;
+                        border-color: $butterscotch transparent transparent transparent;
+                        z-index: 1;
+                    }
+                }
+
+
+                // 2. Butterscotchカラーカード
+                &.butterscotch {
+                    background-color: $butterscotch;
+                    color: $white;
+                    padding: 50px 30px;
+
+                    .title,
+                    .stars {
+                        color: $white;
+                    }
+
+                    .comment {
+                        margin-block: 20px;
+                    }
+                }
+
+                // 3. Quotation Mark下
+                &.quate-bottom {
+                    color: $jasper;
+                    padding: 40px 30px;
+
+                    .quate-bottom-icon {
+                        width: 60px;
+                        height: 60px;
+                        text-align: right;
+                    }
+
+                    .quate-mark {
+                        position: absolute;
+                        bottom: -50px;
+                        right: 0;
+                        width: 120px;
+                    }
+                }
+
+                // 4. 下アバター＋吹き出し
+                &.cocoa {
+                    background-color: $cocoa-brown;
+                    color: #fff;
+
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -11px;
+                        left: 32px;
+                        border-style: solid;
+                    }
+
+                    // 外側の三角（= borderの色になる部分）
+                    &::before {
+                        border-width: 11px 11px 0;
+                        border-color: black transparent transparent transparent;
+                        z-index: 0;
+                    }
+
+                    // 内側の三角（=白い吹き出し）
+                    &::after {
+                        bottom: -8px; // 少し上にずらす
+                        border-width: 10px 10px 0;
+                        border-color: $cocoa-brown transparent transparent transparent;
+                        z-index: 1;
+                    }
+
+                    img {
+                        position: absolute;
+                        bottom: -40px;
+                        right: -30px;
+                        width: 90px;
+                        height: 90px;
+                        border: 2px solid #333;
+                    }
+                }
+
+                // 5. 正方形ボックス＋左揃え
+                &.left {
+                    background-color: $cocoa-brown;
+                    color: $white;
+                    text-align: left;
+
+                    .comment {
+                        margin-top: 25px;
+                    }
+
+                    .title {
+                        color: #fff;
+                    }
+
+                    .stars {
+                        color: #fff;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: -40px;
+                        left: -10px;
+                        border: 2px solid $black;
+                    }
+                }
+
+                // 6. 左吹き出し型
+                &.quate-top {
+                    margin-top: 50px;
+
+                    .quate-top-img {
+                        position: absolute;
+                        top: -70px;
+                        left: 0;
+                        width: 120px;
+                        height: 120px;
+                    }
+
+                    .user {
+                        img {
+                            border-radius: 0;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+
+                // 7. 小さな吹き出し＋星評価のみ
+                &.mini {
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    box-shadow: none;
+                    color: #fff;
+                    padding: 6%;
+
+                    img {
+                        position: absolute;
+                        bottom: 20px;
+                        right: -25px;
+                        border: 2px solid #333;
+                    }
+
+                    .stars {
+                        color: #fff;
                         margin-block: 0;
+                    }
+
+                    .mini-top,
+                    .mini-bottom {
+                        margin-bottom: 20px;
+                        padding: 10px 15px;
+                        border: 2px solid #333;
+                        border-radius: 20px;
+                        text-align: center;
+                    }
+
+                    .mini-top {
+                        background-color: $cocoa-brown;
+                        position: relative;
+
+                        &::before,
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 47%;
+                            border-style: solid;
+                            width: 0;
+                            height: 0;
+                        }
+
+                        // 外側の三角（= borderの色になる部分）
+                        &::before {
+                            top: -17px;
+                            left: 46.5%;
+                            border-color: transparent transparent $black transparent;
+                            border-width: 0px 11px 16px 11px;
+                            z-index: 0;
+                        }
+
+                        // 内側の三角（=白い吹き出し）
+                        &::after {
+                            top: -12px;
+                            border-color: transparent transparent $cocoa-brown transparent;
+                            border-width: 0px 10px 15px 10px;
+                            z-index: 1;
+                        }
+                    }
+
+                    .mini-bottom {
+                        background-color: $butterscotch;
+                    }
+                }
+
+                // 8. 右下吹き出し
+                &.right-bubble {
+                    margin-top: 30px;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 55px;
+                        border-style: solid;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    // 外側の三角（= borderの色になる部分）
+                    &::before {
+                        top: -17px;
+                        left: 54px;
+                        border-color: transparent transparent $black transparent;
+                        border-width: 0px 11px 16px 11px;
+                        z-index: 0;
+                    }
+
+                    // 内側の三角（=白い吹き出し）
+                    &::after {
+                        top: -12px;
+                        border-color: transparent transparent $white transparent;
+                        border-width: 0px 10px 15px 10px;
+                        z-index: 1;
+                    }
+
+                    img {
+                        border: 2px solid $black;
+                    }
+                }
+
+                // 10. パキパキオレンジ
+                // &.orange {
+                //     background-color: #ffa836;
+                //     margin-top: 40px;
+                //     color: #fff;
+
+                //     .title {
+                //         color: #fff;
+                //     }
+                // }
+            }
+        }
+
+
+        .voice-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: none;
+            position: relative; // 矢印の絶対位置基準
+
+            @include tb {
+                display: block;
+            }
+
+
+
+            .slide-box {
+                background: $white;
+                border-radius: 16px;
+                padding: 30px 20px;
+                height: 250px;
+                text-align: center;
+                margin: 0 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+                transition: transform 0.3s ease;
+
+
+                @include sp {
+                    padding: 40px 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: #333;
+                }
+
+                .box-lower {
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        margin-right: 10px;
+                    }
+
+                    p {
                         font-weight: bold;
-                        font-size: 20px;
-                    }
-
-                    .location {
-                        margin-block: 0;
-                        font-size: 12px;
+                        color: #ca5431;
+                        margin: 0;
                     }
                 }
+            }
 
+            .slick-prev,
+            .slick-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+                color: #ca5431;
+                border: none;
+                font-size: 24px;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &::before {
+                    content: none !important;
+                }
+            }
+
+            .slick-prev {
+                left: -10px;
+            }
+
+            .slick-next {
+                right: -10px;
+            }
+
+            .slick-dots {
+                display: flex !important;
+                justify-content: center;
+                margin: 30px auto 0;
+                padding: 0;
+                left: 50%;
+                transform: translateX(-50%);
+
+                li {
+                    margin: 0 6px;
+
+                    button {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: $mint-green;
+                        border: none;
+                        transition: background-color 0.3s ease;
+                        font-size: 0;
+                    }
+
+                    &.slick-active button {
+                        background-color: $green;
+                    }
+                }
             }
         }
     }
