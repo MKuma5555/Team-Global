@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"); /* ベースカラー：主に背景 */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
+/* ベースカラー：主に背景 */
 /* メインカラー：主たる装飾色 */
 /* アクセントカラー：装飾色 */
 /* アクセントカラー：主にテキストカラー */
@@ -95,7 +96,6 @@ summary {
   position: relative;
 }
 .fv .vid .holder {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -140,21 +140,9 @@ summary {
   cursor: default;
 }
 .fv .vid .story .main-title .popping-text span:hover {
-  -webkit-animation: pop 0.3s ease;
-          animation: pop 0.3s ease;
+  animation: pop 0.3s ease;
   transition: opacity 0.3s ease;
   opacity: 0.6;
-}
-@-webkit-keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4) translateY(-5px);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 @keyframes pop {
   0% {
@@ -556,11 +544,9 @@ svg {
 }
 #about .splide .splide__list {
   display: flex;
-  cursor: -webkit-grab;
   cursor: grab;
 }
 #about .splide .splide__list:active {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 #about .splide .splide__list.is-grabbing .feed-box {
@@ -1065,7 +1051,7 @@ svg {
   background-color: #49A291;
 }
 
-/*アバター section*/
+/* アバター section */
 .avatar-container {
   height: 100vh;
   display: flex;
@@ -1074,7 +1060,6 @@ svg {
   position: relative;
   overflow: hidden;
   background-color: #dd9348;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
 }
@@ -1087,16 +1072,13 @@ svg {
   width: 100%;
 }
 .logo-row.row-1 {
-  -webkit-animation: slideLeft 10s linear infinite;
-          animation: slideLeft 10s linear infinite;
+  animation: slideLeft 10s linear infinite;
 }
 .logo-row.row-2 {
-  -webkit-animation: slideRight 10s linear infinite;
-          animation: slideRight 10s linear infinite;
+  animation: slideRight 10s linear infinite;
 }
 .logo-row.row-3 {
-  -webkit-animation: slideLeft 10s linear infinite;
-          animation: slideLeft 10s linear infinite;
+  animation: slideLeft 10s linear infinite;
 }
 
 .logo-item {
@@ -1109,7 +1091,7 @@ svg {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  /*avatar レスポンシブ*/
+  transition: transform 0.3s ease;
 }
 .logo-item:hover {
   transform: scale(1.1);
@@ -1120,45 +1102,15 @@ svg {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 50%;
-  background: #f6e4c8;
-  margin: 0 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
 }
-.logo-item img:hover {
-  transform: scale(1.1);
-}
-.logo-item img img {
-  width: 80px;
-  height: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-radius: 50%;
-}
-@-webkit-keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-40%);
-  }
-}
+
+/* アニメーション */
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-40%);
-  }
-}
-@-webkit-keyframes slideRight {
-  0% {
-    transform: translateX(-40%);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 @keyframes slideRight {
@@ -1169,30 +1121,37 @@ svg {
     transform: translateX(0);
   }
 }
-@media (max-width: 768px) {
-  .logo-item .logo-item {
-    width: 80px;
-    height: 80px;
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .logo-item {
+    width: 90px;
+    height: 90px;
     margin: 0 10px;
   }
-  .logo-item .logo-item img {
-    width: 60px;
-    height: 60px;
+  .logo-item img {
+    width: 65px;
+    height: 65px;
   }
 }
-@media (max-width: 480px) {
-  .logo-item .logo-item {
-    width: 60px;
-    height: 60px;
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .logo-item {
+    width: 70px;
+    height: 70px;
     margin: 0 8px;
   }
-  .logo-item .logo-item img {
-    width: 40px;
-    height: 40px;
+  .logo-item img {
+    width: 50px;
+    height: 50px;
+  }
+  /* スマホはアニメーションをゆっくり */
+  .logo-row.row-1,
+  .logo-row.row-2,
+  .logo-row.row-3 {
+    animation-duration: 15s;
   }
 }
-
-/*F&Q sectionF&Q section*/
+/* FAQ Section */
 #faq {
   max-width: 700px;
   margin: 0 auto 60px;
@@ -1200,17 +1159,45 @@ svg {
   padding: 80px;
   border-radius: 10px;
 }
+@media (max-width: 1024px) {
+  #faq {
+    padding: 60px 40px;
+    margin: 0 20px 40px;
+  }
+}
+@media (max-width: 768px) {
+  #faq {
+    padding: 40px 20px;
+    margin: 0 10px 30px;
+  }
+}
 
+/* タイトルとサブタイトル */
 .faq-title {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 28px;
 }
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 22px;
+  }
+}
+
 .faq-subtitle {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .faq-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }
 
+/* 質問ブロック */
 details {
   border: 1px solid #dd9348;
   border-radius: 8px;
@@ -1218,14 +1205,18 @@ details {
   padding: 12px 16px;
   background: #f6e4c8;
   cursor: pointer;
+  /* summary部分 */
+  /* 開いたときの矢印 */
+  /* 回答部分 */
 }
-
-summary {
-  font-weight: bold;
-  display: block;
+@media (max-width: 768px) {
+  details {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
 }
-
 details summary {
+  font-weight: bold;
   list-style: none;
   position: relative;
   padding-right: 20px;
@@ -1233,14 +1224,19 @@ details summary {
   line-height: 2.8;
   display: block;
 }
+@media (max-width: 768px) {
+  details summary {
+    line-height: 2.2;
+    font-size: 14px;
+  }
+}
 details summary::after {
   content: "▶";
   position: absolute;
   right: 0;
-  top: 0;
+  top: 4px;
   font-size: 14px;
   transition: transform 0.2s ease;
-  top: 4px;
 }
 details[open] summary::after {
   content: "▼";
@@ -1251,31 +1247,65 @@ details p {
   padding-top: 5px;
   border-top: 1px solid #d3692e;
 }
+@media (max-width: 768px) {
+  details p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
 
-/* Price table */
+/* Price Section */
 /* 波SVG */
 svg {
   display: block;
 }
 
+/* 料金セクション全体 */
 #price {
   background-color: #d3692e;
+  padding: 60px 0;
+}
+@media (max-width: 768px) {
+  #price {
+    padding: 40px 0;
+  }
 }
 
+/* フレックス配置（PCは横並び、SPは縦並び） */
 .flex-price {
   display: flex;
   justify-content: center;
   gap: 30px;
   align-items: stretch;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .flex-price {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+  }
 }
 
+/* 見出し */
 .pricing-title {
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 40px;
   color: #f6e4c8;
+  font-size: 28px;
+}
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 }
 
+/* プランカード */
 .plan {
   margin: 0 auto 5px;
   background-color: #f6e4c8;
@@ -1289,9 +1319,25 @@ svg {
   justify-content: space-between;
   min-height: 400px;
   height: auto;
+  transition: transform 0.2s ease;
+  /* レスポンシブスマホ*/
+  /* タイトル */
+  /* アイコン画像 */
+  /* 価格 */
+  /* リスト */
+  /* ボタン */
 }
-.plans {
-  margin-bottom: 50px;
+.plan:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  .plan {
+    width: calc(100% - 80px);
+    max-width: none;
+    padding: 30px;
+    margin: 0 auto;
+    min-height: auto;
+  }
 }
 .plan h3 {
   margin-top: 0;
@@ -1308,6 +1354,11 @@ svg {
   font-weight: bold;
   margin: 10px 0 20px;
   color: #dd9348;
+}
+@media (max-width: 768px) {
+  .plan .price {
+    font-size: 20px;
+  }
 }
 .plan ul {
   list-style: none;
@@ -1331,13 +1382,13 @@ svg {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .plan .price-btn:hover {
-  background-color: #ca5431;
+  background-color: #49A291;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px #dd9348;
+  box-shadow: 0 4px 8px #B5E0D8;
 }
 .plan .price-btn:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 2px #dd9348;
+  box-shadow: 0 1px 2px #B5E0D8;
 }
 
 /* footer section */
@@ -1743,5 +1794,4 @@ html[dir=rtl] .progress-container .progress {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
