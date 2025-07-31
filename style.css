@@ -86,24 +86,22 @@ li {
   font-weight: 300;
   cursor: pointer;
   text-decoration: none;
-  color: #ca5431;
+  color: white;
 }
 .fv header nav ul li a:hover {
-  text-decoration: underline;
+  color: #49A291;
+  font-weight: 900;
 }
 .fv .vid {
-  height: 500vh;
+  height: 450vh;
   position: relative;
 }
 .fv .vid .holder {
   position: sticky;
   top: 0;
   width: 100%;
-  /* 幅は親要素に合わせる */
   height: 100vh;
-  /* 常に画面の高さに固定 */
   overflow: hidden;
-  /* はみ出た部分を隠す */
 }
 .fv .vid video {
   width: 100%;
@@ -120,18 +118,29 @@ li {
   width: 100%;
   color: white;
 }
-.fv .vid .story .fv-main-title {
-  font-size: 18em;
+.fv .vid .story div {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.fv .vid .story .main-title {
+  height: 100vh;
+  align-items: center;
+}
+.fv .vid .story .main-title .fv-main-title {
+  font-size: 18vw;
   font-weight: 900;
   line-height: 1.5;
 }
-.fv .vid .story .popping-text span {
+.fv .vid .story .main-title .popping-text span {
   display: inline-block;
   opacity: 1;
   transition: transform 0.2s ease;
   cursor: default;
 }
-.fv .vid .story .popping-text span:hover {
+.fv .vid .story .main-title .popping-text span:hover {
   animation: pop 0.3s ease;
   transition: opacity 0.3s ease;
   opacity: 0.6;
@@ -147,24 +156,35 @@ li {
     transform: scale(1);
   }
 }
-.fv .vid .story div {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.fv .vid .story .subtitle {
+  padding: 1rem;
+  height: 70vh;
 }
-.fv .vid .story div h1 {
-  font-size: 6em;
+.fv .vid .story .subtitle:nth-child(2) {
+  justify-content: flex-end;
+  padding-left: 10%;
+}
+.fv .vid .story .subtitle:nth-child(3) {
+  justify-content: start;
+}
+.fv .vid .story .subtitle:nth-child(4) {
+  justify-content: end;
+}
+.fv .vid .story .subtitle:nth-child(5) {
+  justify-content: center;
+}
+.fv .vid .story .subtitle h1 {
+  font-size: 3vw;
   font-weight: 900;
   line-height: 1.5;
+  width: auto;
 }
 
 .modal_box {
   position: fixed;
   left: 2%;
   bottom: 20px;
-  z-index: 99999999;
+  z-index: 2000;
   width: 220px;
   height: auto;
   background-color: #ffffff;
@@ -189,8 +209,12 @@ li {
 .modal_box.modal_box .text {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
   color: #555;
+}
+.modal_box.modal_box .text:last-child {
+  margin-bottom: 2rem;
 }
 .modal_box.modal_box .trial_btn {
   padding: 0.5rem 1rem;
@@ -199,17 +223,33 @@ li {
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.modal_box.modal_box .trial_btn:hover {
+  background-color: #c8721f;
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.modal_box.modal_box .trial_btn:active {
+  transform: translateY(-2px) scale(0.97);
+  background-color: #b96418;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+.modal_box.modal_box a {
+  text-decoration: none;
 }
 
 .back_to_top_btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999999;
+  z-index: 2000;
   background-color: #f6e4c8;
   padding: 10px 20px;
   border-radius: 50%;
@@ -240,24 +280,24 @@ li {
     display: none;
   }
   .fv .vid {
-    height: 200vh;
+    height: 400vh;
   }
   .fv .vid .holder {
     width: 100%;
     height: 100vh;
   }
   .fv .vid video {
-    /* ここを変更 */
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
   }
-  .fv .vid .story div {
-    height: 50vh;
+  .fv .vid .story .subtitle {
+    padding: 1rem;
+    height: 40vh;
   }
-  .fv .vid .story div h1 {
-    font-size: 1.3rem;
+  .fv .vid .story .subtitle h1 {
+    font-size: 4vw;
     font-weight: 500;
     line-height: 1;
   }
@@ -287,15 +327,14 @@ li {
   width: 300px;
   max-height: 0;
   background-color: rgba(7, 7, 7, 0.1);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .dropdown_menu.open {
   max-height: 500px;
-  /* 必要に応じて内容に合わせて調整 */
 }
 .dropdown_menu ul {
   padding: 0;
@@ -311,7 +350,7 @@ li {
   text-decoration: none;
 }
 .dropdown_menu ul li a:hover {
-  color: #ff7f50;
+  color: #ca5431;
 }
 
 @media (max-width: 992px) {
@@ -1023,7 +1062,7 @@ svg {
   background-color: #49A291;
 }
 
-/*アバター section*/
+/* アバター section */
 .avatar-container {
   height: 100vh;
   display: flex;
@@ -1032,7 +1071,6 @@ svg {
   position: relative;
   overflow: hidden;
   background-color: #dd9348;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
 }
@@ -1064,7 +1102,7 @@ svg {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  /*avatar レスポンシブ*/
+  transition: transform 0.3s ease;
 }
 .logo-item:hover {
   transform: scale(1.1);
@@ -1075,23 +1113,9 @@ svg {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 50%;
-  background: #f6e4c8;
-  margin: 0 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
 }
-.logo-item img:hover {
-  transform: scale(1.1);
-}
-.logo-item img img {
-  width: 80px;
-  height: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-radius: 50%;
-}
+
+/* アニメーション */
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
@@ -1108,30 +1132,37 @@ svg {
     transform: translateX(0);
   }
 }
-@media (max-width: 768px) {
-  .logo-item .logo-item {
-    width: 80px;
-    height: 80px;
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .logo-item {
+    width: 90px;
+    height: 90px;
     margin: 0 10px;
   }
-  .logo-item .logo-item img {
-    width: 60px;
-    height: 60px;
+  .logo-item img {
+    width: 65px;
+    height: 65px;
   }
 }
-@media (max-width: 480px) {
-  .logo-item .logo-item {
-    width: 60px;
-    height: 60px;
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .logo-item {
+    width: 70px;
+    height: 70px;
     margin: 0 8px;
   }
-  .logo-item .logo-item img {
-    width: 40px;
-    height: 40px;
+  .logo-item img {
+    width: 50px;
+    height: 50px;
+  }
+  /* スマホはアニメーションをゆっくり */
+  .logo-row.row-1,
+  .logo-row.row-2,
+  .logo-row.row-3 {
+    animation-duration: 15s;
   }
 }
-
-/*F&Q sectionF&Q section*/
+/* FAQ Section */
 #faq {
   max-width: 700px;
   margin: 0 auto 60px;
@@ -1139,17 +1170,45 @@ svg {
   padding: 80px;
   border-radius: 10px;
 }
+@media (max-width: 1024px) {
+  #faq {
+    padding: 60px 40px;
+    margin: 0 20px 40px;
+  }
+}
+@media (max-width: 768px) {
+  #faq {
+    padding: 40px 20px;
+    margin: 0 10px 30px;
+  }
+}
 
+/* タイトルとサブタイトル */
 .faq-title {
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 28px;
 }
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 22px;
+  }
+}
+
 .faq-subtitle {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .faq-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }
 
+/* 質問ブロック */
 details {
   border: 1px solid #dd9348;
   border-radius: 8px;
@@ -1157,14 +1216,18 @@ details {
   padding: 12px 16px;
   background: #f6e4c8;
   cursor: pointer;
+  /* summary部分 */
+  /* 開いたときの矢印 */
+  /* 回答部分 */
 }
-
-summary {
-  font-weight: bold;
-  display: block;
+@media (max-width: 768px) {
+  details {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
 }
-
 details summary {
+  font-weight: bold;
   list-style: none;
   position: relative;
   padding-right: 20px;
@@ -1172,14 +1235,19 @@ details summary {
   line-height: 2.8;
   display: block;
 }
+@media (max-width: 768px) {
+  details summary {
+    line-height: 2.2;
+    font-size: 14px;
+  }
+}
 details summary::after {
   content: "▶";
   position: absolute;
   right: 0;
-  top: 0;
+  top: 4px;
   font-size: 14px;
   transition: transform 0.2s ease;
-  top: 4px;
 }
 details[open] summary::after {
   content: "▼";
@@ -1190,31 +1258,65 @@ details p {
   padding-top: 5px;
   border-top: 1px solid #d3692e;
 }
+@media (max-width: 768px) {
+  details p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
 
-/* Price table */
+/* Price Section */
 /* 波SVG */
 svg {
   display: block;
 }
 
+/* 料金セクション全体 */
 #price {
   background-color: #d3692e;
+  padding: 60px 0;
+}
+@media (max-width: 768px) {
+  #price {
+    padding: 40px 0;
+  }
 }
 
+/* フレックス配置（PCは横並び、SPは縦並び） */
 .flex-price {
   display: flex;
   justify-content: center;
   gap: 30px;
   align-items: stretch;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .flex-price {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+  }
 }
 
+/* 見出し */
 .pricing-title {
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 40px;
   color: #f6e4c8;
+  font-size: 28px;
+}
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 }
 
+/* プランカード */
 .plan {
   margin: 0 auto 5px;
   background-color: #f6e4c8;
@@ -1228,9 +1330,25 @@ svg {
   justify-content: space-between;
   min-height: 400px;
   height: auto;
+  transition: transform 0.2s ease;
+  /* レスポンシブスマホ*/
+  /* タイトル */
+  /* アイコン画像 */
+  /* 価格 */
+  /* リスト */
+  /* ボタン */
 }
-.plans {
-  margin-bottom: 50px;
+.plan:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  .plan {
+    width: calc(100% - 80px);
+    max-width: none;
+    padding: 30px;
+    margin: 0 auto;
+    min-height: auto;
+  }
 }
 .plan h3 {
   margin-top: 0;
@@ -1247,6 +1365,11 @@ svg {
   font-weight: bold;
   margin: 10px 0 20px;
   color: #dd9348;
+}
+@media (max-width: 768px) {
+  .plan .price {
+    font-size: 20px;
+  }
 }
 .plan ul {
   list-style: none;
@@ -1270,13 +1393,13 @@ svg {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .plan .price-btn:hover {
-  background-color: #ca5431;
+  background-color: #49A291;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px #dd9348;
+  box-shadow: 0 4px 8px #B5E0D8;
 }
 .plan .price-btn:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 2px #dd9348;
+  box-shadow: 0 1px 2px #B5E0D8;
 }
 
 /* footer section */
@@ -1443,15 +1566,14 @@ svg {
 }
 
 #chart {
-  background-color: #a71555;
   display: flex;
   justify-content: center;
-  background-image: url("/img/bg1.png");
+  background-image: url("/img/bg2.png");
   background-repeat: repeat;
 }
 
 .chart-question {
-  color: var(--main-color);
+  color: #444;
 }
 
 /* form styles */
@@ -1460,6 +1582,7 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
   gap: 16px;
   padding: 16px;
   margin: 5rem 2rem 5rem 2rem;
@@ -1489,7 +1612,7 @@ svg {
 .chart-container .chart-wizard .progress-container .progress {
   height: 4px;
   width: var(--progress-width);
-  background-color: var(--main-color);
+  background-color: #B5E0D8;
   position: absolute;
   top: calc(var(--step-size) / 2);
   left: 50%;
@@ -1539,8 +1662,8 @@ svg {
   display: none;
 }
 .chart-container .chart-wizard .progress-container .steps-bar .current {
-  color: #fff;
-  background-color: #c41e67;
+  color: #444;
+  background-color: #B5E0D8;
 }
 
 /* if page is rtl adjust the transform origin */
@@ -1582,13 +1705,14 @@ html[dir=rtl] .progress-container .progress {
   border: none;
   border-radius: 16px;
   padding: 8px 16px;
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: #B5E0D8;
+  color: #444;
   font-size: 0.875rem;
   transition: 0.3s;
 }
 .choice-buttons button:hover, .choice-buttons button:active {
-  background-color: var(--dark-color);
+  background-color: #49A291;
+  color: #fff;
 }
 .choice-buttons button:disabled {
   opacity: 0.8;
@@ -1667,4 +1791,18 @@ html[dir=rtl] .progress-container .progress {
 }
 .chart-div .line-step ol li:last-child::before {
   display: none;
+}
+
+#chart .section-title {
+  position: relative;
+}
+#chart .section-title::before {
+  content: "";
+  width: 150px;
+  height: 4px;
+  background-color: rgb(221, 147, 72);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }/*# sourceMappingURL=style.css.map */

@@ -55,40 +55,46 @@
       <!-- SP 用　DropDownメニュー -->
       <div class="dropdown_menu">
         <ul>
-          <li><a href="#feature">機能</a></li>
-          <li><a href="#about">コミュニティの雰囲気</a></li>
-          <li><a href="#chart">チャート診断</a></li>
-          <li><a href="#voice">体験談</a></li>
-          <li><a href="#showcase">アバターショーケース</a></li>
+          <li><a href="#feature">Features</a></li>
+          <li><a href="#about">Community</a></li>
+          <li><a href="#chart">Chart</a></li>
+          <li><a href="#voice">Voice</a></li>
+          <li><a href="#showcase">Avatar</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#price">料金プラン</a></li>
-          <li><a href="#contact">問い合わせ</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </header>
-    <div class="vid">
-      <div class="holder">
-        <video src="video/Canva_2_ver2.mp4" autoplay muted loop playsinline></video>
-      </div>
-      <div class="story">
-        <div>
-          <h1 class="popping-text fv-main-title">
-            <span>M</span><span>e</span><span>t</span><span>a</span>
-            <span>L</span><span>i</span><span>f</span><span>e</span>
-          </h1>
+      <div class="vid">
+        <div class="holder">
+          <video
+            src="video/bgーfv.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
         </div>
-        <div>
-          <h1>世界中どこにいても、繋がれる&hellip;</h1>
-        </div>
+        <div class="story">
+          <div class="main-title">
+            <h1 class="popping-text fv-main-title">
+              <span>M</span><span>e</span><span>t</span><span>a</span> <span>L</span><span>i</span><span>f</span><span>e</span>
+            </h1>
+          </div>
+          <div class="subtitle">
+            <h1>世界中どこにいても、<br>繋がれる&hellip;</h1>
+          </div>
 
-        <div>
-          <h1>仲間と学び、挑戦し、成長する。</h1>
-        </div>
-        <div>
-          <h1>Meta Lifeを使って、あなたの「やりたい」をもっと身近に。</h1>
-        </div>
-        <div>
-          <h1>つながる新しいオンラインスクール体験。</h1>
+          <div class="subtitle">
+            <h1>仲間と学び、挑戦し、成長する。</h1>
+          </div>
+          <div class="subtitle"> 
+            <h1>Meta Lifeを使って、あなたの<br>「やりたい」をもっと身近に。</h1>
+          </div>
+          <div class="subtitle">
+            <h1>つながる新しいオンラインスクール体験。</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -168,25 +174,25 @@
       <p class="sub-title">ひとりじゃない。世界中の仲間と一緒に学べる環境。画面の向こうに、つながる仲間。</p>
 
       <div id="feed-slider" class="splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <!-- 1 -->
-            <li class="splide__slide">
-              <div class="feed-box-wrapper">
-                <div class="feed-layer feed-layer-1"></div>
-                <div class="feed-layer feed-layer-2"></div>
-                <div class="feed-box">
-                  <img src="img/mokumoku-room.png" class="feed-image" alt="">
-                  <div class="feed-lower">
-                    <img src="img/icons/coffee.png" class="icon" alt="">
-                    <div class="feed-text">
-                      <p class="box-title">朝活セッション</p>
-                      <p class="box-text">25分集中×5分休憩のリズムで、朝からやる気スイッチON!</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+          <div class="splide__track">
+              <ul class="splide__list">
+                  <!-- 1 -->
+                  <li class="splide__slide">
+                      <div class="feed-box-wrapper">
+                          <div class="feed-layer feed-layer-1"></div>
+                          <div class="feed-layer feed-layer-2"></div>
+                          <div class="feed-box">
+                              <img src="img/mokumoku-room.png" class="feed-image" alt="">
+                              <div class="feed-lower">
+                                  <img src="img/icons/coffee.png" class="icon" alt="">
+                                  <div class="feed-text">
+                                      <p class="box-title">朝活セッション</p>
+                                      <p class="box-text">25分集中×5分休憩のリズムで、朝からやる気スイッチON!</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
 
             <!-- 2 -->
             <li class="splide__slide">
@@ -280,16 +286,20 @@
           </ul>
         </div>
       </div>
-    </section>
+  </section>
+
 
     <!-- あなたに合うチャート診断 -->
     <section id="chart">
       <div class="chart-container">
         <div class="chart-title">
-          <h1>チャート診断</h1>
-          <p>あなたにぴったりの使い方を提案します。</p>
+          <h2 class="section-title">CHART</h2>
+          <p>MetaLife のあなたにぴったりの使い方を提案します。</p>
         </div>
 
+        <div>
+          <button class="chart-start" type="button">診断をする</button>
+        </div>
         <div class="chart-wizard">
           <!-- .completed -->
           <div class="completed result-card" hidden>
@@ -304,7 +314,7 @@
             </button>
           </div>
 
-          <h1>Chart test</h1>
+       
           <div class="flow-container progress-container">
             <div class="progress"></div>
 
@@ -322,24 +332,6 @@
           </div>
         </div>
       </div>
-
-      <!-- テストで区切りのウェーブ入れてます -->
-      <!-- <div class="test-wave" style="line-height: 0">
-              <div class="wave-top"></div>
-              <h1>Hello wave</h1>
-      
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
-                <path
-                  fill="#ca5431"
-                  fill-opacity="1"
-                  d="M0,128L48,122.7C96,117,192,107,288,85.3C384,64,480,32,576,37.3C672,43,768,85,864,128C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                ></path>
-              </svg>
-              <div
-                class="wave-bottom"
-                style="background: #ca5431; height: 200px"
-              ></div>
-            </div> -->
     </section>
 
 
@@ -761,13 +753,7 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <div class="footer-text">
-          <small>© 2025 made by team global. All rights reserved.</small>
-        </div>
-      </div>
-    </footer>
-
-
+      </section>
 
 
 
@@ -781,9 +767,11 @@
 
       <div>
         <h2>無料体験</h2>
-        <p class="text">まずは無料で体験してみませんか？</p>
-        <p class="text">Meta Lifeの魅力を実際に感じてください。</p>
-        <button class="trial_btn">無料体験を申し込む</button>
+        <p class="text">まずは無料で<br>体験してみませんか？</p>
+        <p class="text">Meta Lifeの魅力を<br>実際に感じてください。</p>
+        <a
+        href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="trial_btn"
+      >無料体験を申し込む</a>
       </div>
     </div>
 

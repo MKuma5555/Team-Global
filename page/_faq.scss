@@ -1,72 +1,100 @@
-/*F&Q sectionF&Q section*/
+/* FAQ Section */
+@use "../base/common" as *;
 #faq {
-    max-width: 700px;
-    margin: 0 auto 60px;
-    background: #f6e4c8;
-    padding: 80px;
-    border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  background: #f6e4c8;
+  padding: 80px;
+  border-radius: 10px;
 
+  @include tb {
+    padding: 60px 40px;
+    margin: 0 20px 40px;
+  }
+
+  @include sp {
+    padding: 40px 20px;
+    margin: 0 10px 30px;
+  }
 }
 
-.faq {
-    &-title {
-        text-align: center;
-        // font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
+/* タイトルとサブタイトル */
+.faq-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 28px;
 
-    &-subtitle {
-        text-align: center;
-        margin-bottom: 30px;
-    }
+  @include sp {
+    font-size: 22px;
+  }
 }
 
+.faq-subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+
+  @include sp {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+/* 質問ブロック */
 details {
-    border: 1px solid #dd9348;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 12px 16px;
-    background: #f6e4c8;
-    cursor: pointer;
-}
+  border: 1px solid #dd9348;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 12px 16px;
+  background: #f6e4c8;
+  cursor: pointer;
 
-summary {
+  @include sp {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* summary部分 */
+  summary {
     font-weight: bold;
+    list-style: none;
+    position: relative;
+    padding-right: 20px;
+    cursor: pointer;
+    line-height: 2.8;
     display: block;
-}
 
-details {
-    summary {
-        list-style: none;
-        position: relative;
-        padding-right: 20px;
-        cursor: pointer;
-        line-height: 2.8;
-        display: block;
-
-
-        &::after {
-            content: "▶";
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 14px;
-            transition: transform 0.2s ease;
-            top: 4px;
-        }
+    @include sp {
+      line-height: 2.2;
+      font-size: 14px;
     }
 
-    &[open] {
-        summary::after {
-            content: "▼";
-        }
+    &::after {
+      content: "▶";
+      position: absolute;
+      right: 0;
+      top: 4px;
+      font-size: 14px;
+      transition: transform 0.2s ease;
     }
+  }
 
-    p {
-        line-height: 1.8;
-        margin-left: 1.5px;
-        padding-top: 5px;
-        border-top: 1px solid #d3692e;
+  /* 開いたときの矢印 */
+  &[open] summary::after {
+    content: "▼";
+  }
+
+  /* 回答部分 */
+  p {
+    line-height: 1.8;
+    margin-left: 1.5px;
+    padding-top: 5px;
+    border-top: 1px solid #d3692e;
+
+    @include sp {
+      font-size: 14px;
+      line-height: 1.6;
     }
+  }
 }
