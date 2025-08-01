@@ -6,7 +6,7 @@
     padding-bottom: 100px;
 
     .color {
-        background-color: $orange;
+        background-color: $butterscotch;
         height: 40px;
         position: relative;
         top: -1px;
@@ -16,33 +16,16 @@
         width: 100%;
         object-fit: over;
         position: relative;
-        top: -2px;
-    }
+        top: -1px;
 
-    .section-title {
-        padding-block: 80px;
-        margin-block: 0;
-        position: relative;
+        @include tb {
+            top: -5px;
+        }
 
-        &:before {
-            content: "";
-            width: 150px;
-            height: 4px;
-            background-color: $butterscotch;
-            position: absolute;
-            top: 75%;
-            left: 50%;
-            transform: translateX(-50%);
-
+        @include sp {
+            top: -10px;
         }
     }
-
-    .sub-title {
-        padding-bottom: 50px;
-        margin-block: 0;
-        font-size: 18px;
-    }
-
 
     .wrapper {
         display: grid;
@@ -54,8 +37,12 @@
             background-color: $butterscotch;
             border: 3px solid $black;
             border-radius: 30px;
-            padding: 20px 20px;
+            padding: 20px;
             box-shadow: 2px 4px 10px $butterscotch;
+
+            @include sp {
+                padding: 20px 5%;
+            }
 
             &:nth-of-type(2) {
                 background-color: $white;
