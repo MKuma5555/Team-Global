@@ -29,7 +29,7 @@ const questionData = [
     question: "あなたの得意な時間帯はありますか？",
     options: [
       { text: "朝早くから活動できます", value: 2 },
-      { text: "夜に集中できます", value: 1 },
+      { text: "夜に集中できます", value: 2 },
       { text: "特に決まっていません", value: 0 },
     ],
   },
