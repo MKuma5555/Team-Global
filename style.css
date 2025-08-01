@@ -458,7 +458,6 @@ li {
 /*できること section*/
 #feature {
   text-align: center;
-  padding-bottom: 100px;
 }
 #feature .color {
   background-color: #dd9348;
@@ -1551,7 +1550,7 @@ svg {
 #chart {
   display: flex;
   justify-content: center;
-  background-image: url("../img/bg2.png");
+  background-image: url("img/bg2.png");
   background-repeat: repeat;
 }
 
