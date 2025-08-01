@@ -4,6 +4,8 @@
 /* 波SVG */
 svg {
   display: block;
+  position: relative;
+  top: 1px;
 }
 
 /* 料金セクション全体 */
@@ -12,7 +14,16 @@ svg {
   padding: 60px 0;
 
   @include sp {
-    padding: 40px 0;
+    padding: 0 0 40px;
+  }
+
+  /* 見出し */
+  .section-title {
+    color: $champagne;
+
+    &::before {
+      background-color: $champagne;
+    }
   }
 }
 
@@ -21,40 +32,25 @@ svg {
   display: flex;
   justify-content: center;
   gap: 30px;
-  align-items: stretch;
+  // align-items: stretch;
   flex-wrap: wrap;
 
   @include sp {
-    flex-direction: column; 
-    align-items: stretch; 
+    flex-direction: column;
+    //align-items: stretch; 
     gap: 20px;
     width: 100%;
-    max-width: none;
-  }
-}
-
-/* 見出し */
-.pricing-title {
-  font-weight: bold;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 40px;
-  color: $champagne;
-  font-size: 28px;
-
-  @include sp {
-    font-size: 22px;
-    margin-bottom: 20px;
+    // max-width: none;
   }
 }
 
 /* プランカード */
 .plan {
-  margin: 0 auto 5px;
+  // margin: 0 5px;
   background-color: $champagne;
-  padding: 40px;
+  padding: 40px 100px;
   border-radius: 10px;
-  max-width: 400px; 
+  max-width: 500px;
   text-align: center;
   position: relative;
   display: flex;
@@ -69,13 +65,13 @@ svg {
   }
 
   /* レスポンシブスマホ*/
- @include sp {
-  width: calc(100% - 80px); 
-  max-width: none;
-  padding: 30px;
-  margin: 0 auto;           
-  min-height: auto;
-}
+  @include sp {
+    width: 60%;
+    // max-width: none;
+    padding: 30px 20px;
+    margin: 0 auto;
+    min-height: auto;
+  }
 
   /* タイトル */
   h3 {

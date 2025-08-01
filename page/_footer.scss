@@ -6,6 +6,10 @@
     margin-top: 0;
     width: 100%;
 
+    @include sp {
+        position: relative;
+        top: -5px;
+    }
 
     img {
         width: 100%;
@@ -104,8 +108,8 @@
     }
 
     &:hover {
-        background-color: rgb(182, 224, 216);
-        border-color: rgb(182, 224, 216);
+        background-color: $green;
+        border-color: $green;
 
         .default {
             opacity: 0;
@@ -164,6 +168,11 @@
     .footer-text {
         margin-bottom: 20px;
         font-size: 12px;
+    }
+
+    small {
+        padding-block: 20px;
+        color: $cocoa-brown;
     }
 }
 

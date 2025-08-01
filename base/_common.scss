@@ -1,3 +1,5 @@
+@use "../page/mixin" as mx;
+
 $champagne: #f6e4c8;
 /* ベースカラー：主に背景 */
 $butterscotch: #dd9348;
@@ -38,6 +40,42 @@ main {
   // padding-inline: 16px;
 }
 
+
+.section-title {
+  text-align: center;
+  padding-block: 80px;
+  margin: 0;
+  position: relative;
+  font-size: 40px;
+
+  @include mx.sp {
+    padding:40px 0 60px 0;
+  }
+
+  &::before {
+    content: "";
+    width: 150px;
+    height: 4px;
+    background-color: $butterscotch;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.sub-title {
+  text-align: center;
+  padding-bottom: 100px;
+  margin: 0;
+  font-size: 18px;
+
+  @include mx.sp {
+    font-size: 16px;
+    padding-bottom: 60px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -56,7 +94,8 @@ h2 {
 p,
 a,
 span,
-summary {
+summary,
+li {
   font-family: "Zen Kaku Gothic New",
     // 和文フォント
     "Oswald",

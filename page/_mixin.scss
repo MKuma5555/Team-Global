@@ -1,0 +1,15 @@
+// _mixin.scss：書き出し(mixin)：レスポンシブ
+$sp: 768px;
+$tb: 1024px;
+
+@mixin sp {
+    @media (max-width: $sp) {
+        @content;
+    }
+}
+
+@mixin tb {
+    @media (max-width: $tb) {
+        @content;
+    }
+}
