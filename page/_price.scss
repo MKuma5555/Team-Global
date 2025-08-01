@@ -5,7 +5,7 @@
 svg {
   display: block;
   position: relative;
-  top: 1px;
+  top: 2px;
 }
 
 /* 料金セクション全体 */
@@ -20,6 +20,8 @@ svg {
   /* 見出し */
   .section-title {
     color: $champagne;
+    padding:  80px 0 100px;
+
 
     &::before {
       background-color: $champagne;
