@@ -50,8 +50,8 @@ main {
 
 .sub-title {
   text-align: center;
-  padding-bottom: 100px;
-  margin: 0;
+  padding: 0 20px 100px;
+  margin: 0 auto;
   font-size: 18px;
 }
 @media (max-width: 768px) {
@@ -397,6 +397,7 @@ li {
 }
 .dropdown_menu ul li a:hover {
   color: #49A291;
+  font-weight: 900;
 }
 
 @media (max-width: 992px) {
@@ -460,7 +461,7 @@ li {
   padding-bottom: 100px;
 }
 #feature .color {
-  background-color: #FFA734;
+  background-color: #dd9348;
   height: 40px;
   position: relative;
   top: -1px;
@@ -470,7 +471,7 @@ li {
   -o-object-fit: over;
      object-fit: over;
   position: relative;
-  top: -2px;
+  top: -1px;
 }
 @media (max-width: 1024px) {
   #feature .divider {
@@ -906,7 +907,7 @@ svg {
 #voice .voice-container .voice-grid .voice-card.mini img {
   position: absolute;
   bottom: 20px;
-  right: -25px;
+  left: -30px;
   border: 2px solid #333;
 }
 #voice .voice-container .voice-grid .voice-card.mini .stars {
@@ -979,7 +980,7 @@ svg {
 #voice .voice-container .voice-slider {
   max-width: 1000px;
   margin: 0 auto;
-  padding-inline: 10px;
+  padding: 0 10px 10px;
   display: none;
   position: relative;
 }
@@ -1177,9 +1178,8 @@ svg {
 /* FAQ Section */
 #faq {
   max-width: 700px;
-  margin: 0 auto 60px;
+  margin: 0 auto 100px;
   background: #f6e4c8;
-  padding: 80px;
   border-radius: 10px;
 }
 @media (max-width: 1024px) {

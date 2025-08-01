@@ -256,7 +256,7 @@
                     img {
                         position: absolute;
                         bottom: 20px;
-                        right: -25px;
+                        left: -30px;
                         border: 2px solid #333;
                     }
 
@@ -346,17 +346,6 @@
                         border: 2px solid $black;
                     }
                 }
-
-                // 10. パキパキオレンジ
-                // &.orange {
-                //     background-color: #ffa836;
-                //     margin-top: 40px;
-                //     color: #fff;
-
-                //     .title {
-                //         color: #fff;
-                //     }
-                // }
             }
         }
 
@@ -364,7 +353,7 @@
         .voice-slider {
             max-width: 1000px;
             margin: 0 auto;
-            padding-inline: 10px;
+            padding:0 10px 10px;
             display: none;
             position: relative; // 矢印の絶対位置基準
 
