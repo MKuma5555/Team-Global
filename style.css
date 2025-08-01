@@ -133,6 +133,7 @@ li {
   position: relative;
 }
 .fv .vid .holder {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -177,9 +178,21 @@ li {
   cursor: default;
 }
 .fv .vid .story .main-title .popping-text span:hover {
-  animation: pop 0.3s ease;
+  -webkit-animation: pop 0.3s ease;
+          animation: pop 0.3s ease;
   transition: opacity 0.3s ease;
   opacity: 0.6;
+}
+@-webkit-keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4) translateY(-5px);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @keyframes pop {
   0% {
@@ -337,7 +350,7 @@ li {
   }
   .fv .vid .story .subtitle {
     padding: 1rem;
-    height: 40vh;
+    height: 65vh;
   }
   .fv .vid .story .subtitle h1 {
     font-size: 4vw;
@@ -584,9 +597,11 @@ svg {
 }
 #about .splide .splide__list {
   display: flex;
+  cursor: -webkit-grab;
   cursor: grab;
 }
 #about .splide .splide__list:active {
+  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 #about .splide .splide__list.is-grabbing .feed-box {
@@ -1096,13 +1111,16 @@ svg {
   width: 100%;
 }
 .logo-row.row-1 {
-  animation: slideLeft 10s linear infinite;
+  -webkit-animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 .logo-row.row-2 {
-  animation: slideRight 10s linear infinite;
+  -webkit-animation: slideRight 10s linear infinite;
+          animation: slideRight 10s linear infinite;
 }
 .logo-row.row-3 {
-  animation: slideLeft 10s linear infinite;
+  -webkit-animation: slideLeft 10s linear infinite;
+          animation: slideLeft 10s linear infinite;
 }
 
 .logo-item {
@@ -1129,12 +1147,28 @@ svg {
 }
 
 /* アニメーション */
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-40%);
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 @keyframes slideRight {
@@ -1170,9 +1204,10 @@ svg {
   }
   /* スマホはアニメーションをゆっくり */
   .logo-row.row-1,
-  .logo-row.row-2,
-  .logo-row.row-3 {
-    animation-duration: 15s;
+.logo-row.row-2,
+.logo-row.row-3 {
+    -webkit-animation-duration: 15s;
+            animation-duration: 15s;
   }
 }
 /* FAQ Section */
@@ -1746,4 +1781,5 @@ html[dir=rtl] .progress-container .progress {
     font-size: 1rem;
     gap: 8px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
