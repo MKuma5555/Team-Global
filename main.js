@@ -165,7 +165,7 @@ dropdownLinks.forEach((itemLink) => {
   itemLink.addEventListener("click", () => {
     dropdownMenu.classList.remove("open");
     isOpen = false;
-    menuIcon.innerHTML = hamburgerSVG;
+    menuIcon.innerHTML = hamburgerSvg;
   });
 });
 
