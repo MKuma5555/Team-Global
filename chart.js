@@ -2,72 +2,83 @@
 
 const questionData = [
   {
-    question: "META LEAFを知っていますか？",
+    question: "META LEAFへの参加は初めてですか？",
     options: [
-      { text: "知っている", value: 2 },
-      { text: "聞いたことがある", value: 1 },
-      { text: "知らない", value: 0 },
+      { text: "はい、初めてです", value: 0 },
+      { text: "数回参加したことがあります", value: 1 },
+      { text: "かなり参加しています", value: 2 },
     ],
   },
   {
-    question: "ウェブデザインの経験はありますか？",
+    question: "他のメンバーとの交流は得意な方ですか？",
     options: [
-      { text: "経験あり", value: 2 },
-      { text: "少し学んだことがある", value: 1 },
-      { text: "全くの初心者", value: 0 },
+      { text: "はい、得意です！", value: 2 },
+      { text: "積極的に話しかけるのは少し苦手です", value: 1 },
+      { text: "一人で作業するのが好きです", value: 0 },
     ],
   },
   {
-    question: "現在の学習スタイルは？",
+    question: "主にMETA LEAFで達成したいことは何ですか？",
     options: [
-      { text: "一人で勉強", value: 2 },
-      { text: "スクールで勉強", value: 1 },
-      { text: "特に決まってない", value: 0 },
+      { text: "プログラミングスキルを向上させたい", value: 1 },
+      { text: "仲間を増やし、情報交換したい", value: 2 },
+      { text: "集中して作業を進めたい", value: 0 },
     ],
   },
   {
-    question: "最も重視することは？",
+    question: "あなたの得意な時間帯はありますか？",
     options: [
-      { text: "スキルアップ", value: 2 },
-      { text: "仲間とのつながり", value: 1 },
-      { text: "案件獲得", value: 0 },
+      { text: "朝早くから活動できます", value: 2 },
+      { text: "夜に集中できます", value: 2 },
+      { text: "特に決まっていません", value: 0 },
     ],
   },
   {
-    question: "1日の学習時間は？",
+    question: "META LEAFに週にどれくらい参加したいですか？",
     options: [
-      { text: "1時間未満", value: 2 },
-      { text: "1−３時間", value: 1 },
-      { text: "3時間以上", value: 0 },
+      { text: "週に何度も参加したい", value: 2 },
+      { text: "週に1〜2回程度", value: 1 },
+      { text: "時間がある時に参加したい", value: 0 },
     ],
-  },
-];
-const resultData = [
-  {
-    range: [0, 4],
-    title: "初心者",
-    description:
-      "ウェブデザインの経験がほとんどない方。まずは基礎から学ぶことをおすすめします。",
-  },
-  {
-    range: [5, 8],
-    title: "中級者",
-    description:
-      "基本的な知識はあるものの、実践経験が少ない方。プロジェクトに参加して実践力を高めましょう。",
-  },
-  {
-    range: [9, 10],
-    title: "上級者",
-    description:
-      "豊富な経験とスキルを持つ方。さらなるスキルアップや案件獲得に挑戦しましょう。",
   },
 ];
 
+const resultData = [
+  {
+    // 新規参加や一人作業を好む方向け
+    range: [0, 2],
+    title: "まずは体験・個別相談",
+    description:
+      "META LEAFへの参加が初めての方や、一人で集中して作業したいあなたには、まずはメタリーフの主である陽介さんやてつさんに直接質問してみるのがおすすめです。個別の疑問を解消し、META LEAFの雰囲気を掴みましょう。また、もくもくルームで集中して作業し、息抜きにみんなと交流するのも良いでしょう。",
+  },
+  {
+    // 交流は苦手だが、質問したい方向け
+    range: [3, 5],
+    title: "初心者質問会・作業会活用",
+    description:
+      "積極的に話すのは苦手だけど、疑問を解決したいあなたには、毎週木曜日開催の初心者質問会がぴったりです。安心して質問できる場で、疑問を解消しましょう。また、毎週月曜日の作業会に参加して、他のメンバーの体験談や情報を得るのもおすすめです。",
+  },
+  {
+    // 朝活や交流をしたい方向け
+    range: [6, 7],
+    title: "朝活・情報交換重視",
+    description:
+      "朝の時間を有効活用したいあなたには、朝5時から空いている朝会への参加がおすすめです。効率よく時間を使って、一日をスタートさせましょう。また、仲間との情報交換を重視するなら、月曜作業会で多くのメンバーと交流を深めましょう。",
+  },
+  {
+    // 積極的な交流やイベント参加をしたい方向け
+    range: [8, 10],
+    title: "積極的な交流・イベント参加",
+    description:
+      "多くの仲間と交流し、さらにMETA LEAFを楽しみたいあなたは、ハッカソンや飲み会などのイベントに積極的に参加して、人脈を広げましょう！きっと新たな発見や刺激が見つかるはずです。",
+  },
+];
 let currentStep = 0;
+
+let totalValue = 0;
 
 function goToNextStep() {
   if (currentStep < questionData.length - 1) {
-    currentStep++;
     renderStepsBar(currentStep);
     renderQuestion(currentStep);
   }
@@ -101,6 +112,8 @@ const renderQuestion = (step) => {
     choiceButton.addEventListener("click", () => {
       currentStep++;
       console.log("Current step:", currentStep);
+      totalValue += parseInt(choiceButton.value, 10);
+      console.log("Value check", totalValue);
 
       if (currentStep < questionData.length) {
         renderStepsBar(currentStep); // ←ここが重要！
@@ -120,10 +133,22 @@ resultCard.hidden = true;
 
 function displayResult() {
   resultCard.hidden = false;
+  resultCard.style.display = "flex";
+  resultCard.querySelector("h3")?.remove();
+  resultCard.querySelector("p")?.remove();
+
   const title = document.createElement("h3");
   const description = document.createElement("p");
-  title.textContent = "診断結果を表示！";
-  description.innerHTML = "<p>結果に応じた内容をここに表示します。</p>";
+  for (let i = 0; i < resultData.length; i++) {
+    if (
+      totalValue >= resultData[i].range[0] &&
+      totalValue <= resultData[i].range[1]
+    ) {
+      console.log("check", resultData[i].title, resultData[i].description);
+      title.textContent = resultData[i].title;
+      description.innerHTML = resultData[i].description;
+    }
+  }
   resultCard.insertBefore(title, resetButton);
   resultCard.insertBefore(description, resetButton);
 }
@@ -131,7 +156,14 @@ function displayResult() {
 resetButton.addEventListener("click", () => {
   currentStep = 0;
   resultCard.hidden = true;
+  resultCard.style.display = "none";
   choiceButtons.innerHTML = "";
+  totalValue = 0;
+
+  const oldTitle = resultCard.querySelector("h3");
+  const oldDesc = resultCard.querySelector("p");
+  if (oldTitle) oldTitle.remove();
+  if (oldDesc) oldDesc.remove();
   renderStepsBar(currentStep); // ←リセット時もステップバー更新！
   renderQuestion(currentStep);
 });
@@ -157,8 +189,11 @@ renderStepsBar(currentStep);
 renderQuestion(currentStep);
 
 //
-// const chartStartBtn = document.getElementsByClassName("chart-start")[0]; // Access the first element
+const chartStartBtn = document.getElementsByClassName("chart-start")[0];
+const chartDiv = document.querySelector(".chart-wizard");
 
-// chartStartBtn.addEventListener("click", () => {
-//   console.log("Start button clicked");
-// });
+chartStartBtn.addEventListener("click", () => {
+  console.log("Start button clicked");
+  chartStartBtn.style.display = "none";
+  chartDiv.style.display = "block";
+});

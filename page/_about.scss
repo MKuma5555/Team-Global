@@ -1,11 +1,19 @@
 /*雰囲気 about*/
 @use "../base/common" as *;
 
-svg {
+.wave-top {
   display: block;
   line-height: 0;
   position: relative;
-  top: 1px;
+  top: 60px;
+
+  @include tb {
+    top: 40px;
+  }
+  
+  @include sp {
+    top: 1px;
+  }
 }
 
 #about {
@@ -15,27 +23,14 @@ svg {
 
   .section-title {
     color: $white;
-    padding-block: 85px;
-    margin-block: 0;
-    position: relative;
 
     &:before {
-      content: "";
-      width: 150px;
-      height: 4px;
       background-color: $jasper;
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
-
+  
   .sub-title {
     color: $white;
-    padding-bottom: 50px;
-    margin-block: 0;
-    font-size: 18px;
   }
 
   .splide {

@@ -13,24 +13,6 @@
         padding: 0 16px 100px;
     }
 
-    .section-title {
-        text-align: center;
-        padding-block: 80px;
-        margin: 0;
-        position: relative;
-
-        &::before {
-            content: "";
-            width: 150px;
-            height: 4px;
-            background-color: $butterscotch;
-            position: absolute;
-            top: 75%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
     .sub-title {
         text-align: center;
         padding-bottom: 100px;
@@ -274,7 +256,7 @@
                     img {
                         position: absolute;
                         bottom: 20px;
-                        right: -25px;
+                        left: -30px;
                         border: 2px solid #333;
                     }
 
@@ -364,17 +346,6 @@
                         border: 2px solid $black;
                     }
                 }
-
-                // 10. パキパキオレンジ
-                // &.orange {
-                //     background-color: #ffa836;
-                //     margin-top: 40px;
-                //     color: #fff;
-
-                //     .title {
-                //         color: #fff;
-                //     }
-                // }
             }
         }
 
@@ -382,7 +353,7 @@
         .voice-slider {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding:0 10px 10px;
             display: none;
             position: relative; // 矢印の絶対位置基準
 
@@ -396,7 +367,7 @@
                 background: $white;
                 border-radius: 16px;
                 padding: 30px 20px;
-                height: 250px;
+                height: auto;
                 text-align: center;
                 margin: 0 10px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
@@ -404,7 +375,7 @@
 
 
                 @include sp {
-                    padding: 40px 20px;
+                    padding: 30px 20px;
                 }
 
                 p {
